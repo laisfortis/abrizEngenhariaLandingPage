@@ -32,6 +32,8 @@
   --radius-xl: 70px;
   --radius-card: 33px;
 
+  --chevron-w: 340px; /* largura fixa do gráfico chevron — igual em todo lugar
+                          para as linhas se alinharem nas emendas entre seções */
   --container-max: 1400px;
   --gutter: 30px;
 
@@ -203,12 +205,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   min-height: 640px;
   align-items: center;
 }
+/* largura fixa e igual à do chevron das seções abaixo, para as linhas se
+   encontrarem exatamente na emenda entre o hero e a próxima seção */
 .hero--home .hero__chevron {
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
-  height: 100%;
-  width: auto;
+  width: var(--chevron-w);
+  height: auto;
   z-index: 1;
   pointer-events: none;
 }
@@ -233,6 +237,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero--home { min-height: 420px; }
   .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
   .hero--home .hero__chevron { opacity: 0.7; }
+}
+@media (max-width: 600px) {
+  :root { --chevron-w: 200px; }
 }
 
 /* ---------- Sections genéricas ---------- */
@@ -296,13 +303,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: absolute;
   top: 0;
   right: 0;
-  height: 100%;
-  width: auto;
-  max-width: 45%;
+  width: var(--chevron-w);
+  height: auto;
   z-index: 0;
   pointer-events: none;
-  object-fit: contain;
-  object-position: right center;
 }
 .stripe-overlay--gray { opacity: 0.6; }
 .stripe-overlay--yellow { opacity: 0.85; }
