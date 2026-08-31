@@ -179,7 +179,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero {
   position: relative;
   min-height: 480px;
-  background: linear-gradient(135deg, var(--color-gray) 0%, #3f3d3d 100%);
+  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat, linear-gradient(135deg, var(--color-gray) 0%, #3f3d3d 100%);
   overflow: hidden;
   display: flex;
   align-items: flex-end;
@@ -192,13 +192,13 @@ ul { list-style: none; margin: 0; padding: 0; }
     var(--color-yellow) 0px, var(--color-yellow) 6px,
     transparent 6px, transparent 46px
   );
-  opacity: 0.5;
+  opacity: 0.35;
   mix-blend-mode: screen;
 }
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(88,86,86,0.75) 30%, rgba(88,86,86,0.15) 75%);
+  background: linear-gradient(100deg, rgba(64,62,62,0.88) 25%, rgba(64,62,62,0.45) 75%);
 }
 .hero__title {
   position: relative;
@@ -216,8 +216,15 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 947 / 636;
-  background: var(--color-placeholder-a);
+  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat;
   border: 6px solid var(--color-yellow);
+}
+.hero__panel-logo {
+  position: absolute;
+  left: 6%;
+  top: 12%;
+  width: 55%;
+  max-width: 420px;
 }
 
 /* ---------- Sections genéricas ---------- */
@@ -237,7 +244,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .section__content { position: relative; z-index: 1; }
 
-/* placeholder de foto (troque pelo asset real exportado do Figma) */
+/* placeholder de foto (ainda sem asset real — ex: retratos da equipe) */
 .photo-placeholder {
   background: linear-gradient(135deg, var(--color-placeholder-a), var(--color-placeholder-b));
   border-radius: var(--radius-lg);
@@ -251,6 +258,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   min-height: 200px;
 }
 
+/* foto real: mesmo tratamento visual (cantos arredondados), com <img> real dentro */
+.photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 200px;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 /* ---------- Serviços (home) ---------- */
 .servicos-grid {
   display: grid;
@@ -263,6 +278,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 559/526;
+}
+.servicos-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .servicos-card__tag {
   position: absolute;
@@ -530,6 +552,15 @@ ul { list-style: none; margin: 0; padding: 0; }
 .lightbox__photo {
   aspect-ratio: 533/680;
   position: relative;
+  overflow: hidden;
+}
+.lightbox__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 .lightbox__nav {
   position: absolute;
@@ -602,6 +633,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .trabalhe-card h3 { font-style: italic; font-weight: 900; font-size: var(--fs-h1); color: var(--color-gray); }
 .trabalhe-card__lead { font-style: italic; font-size: 1.2rem; margin: 8px 0 20px; color: var(--color-gray); }
+.trabalhe-card .photo,
 .trabalhe-card .photo-placeholder { aspect-ratio: 559/568; }
 
 @media (max-width: 900px) {
