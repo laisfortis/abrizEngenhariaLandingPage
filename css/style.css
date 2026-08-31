@@ -239,10 +239,42 @@ ul { list-style: none; margin: 0; padding: 0; }
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
 }
-.section__content { position: relative; z-index: 1; }
+.section__bg-title--left {
+  text-align: left;
+  padding-left: 40px;
+}
+@media (max-width: 768px) {
+  .section__bg-title--left { padding-left: 20px; }
+}
+.section__content { position: relative; z-index: 2; }
+
+/* textura diagonal decorativa — usada atrás das seções em todo o site no Figma
+   (não só no hero): cinza sobre fundos claros, amarela sobre fundos escuros */
+.stripe-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -55deg,
+    var(--stripe-color, var(--color-gray)) 0px, var(--stripe-color, var(--color-gray)) 6px,
+    transparent 6px, transparent 46px
+  );
+  opacity: var(--stripe-opacity, 0.4);
+}
+.stripe-overlay--gray { --stripe-color: #585656; --stripe-opacity: 0.35; }
+.stripe-overlay--yellow { --stripe-color: #F6D143; --stripe-opacity: 0.55; }
+
+.section__photo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat;
+  opacity: 0.3;
+}
 
 /* placeholder de foto (ainda sem asset real — ex: retratos da equipe) */
 .photo-placeholder {
@@ -288,9 +320,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .servicos-card__tag {
   position: absolute;
-  top: 24px;
-  left: 24px;
-  right: 24px;
+  top: 11%;
+  left: 0;
+  right: 0;
   background: var(--color-gray);
   color: var(--color-yellow);
   font-weight: 500;
@@ -298,30 +330,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-align: center;
   padding: 14px 16px;
   border-radius: var(--radius-card);
+  z-index: 1;
 }
-.servicos-card__nav {
-  position: absolute;
-  bottom: 24px;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.servicos-card__nav button {
-  background: rgba(0,0,0,0.35);
-  border: none;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-}
+.servicos-text { text-align: right; }
 .servicos-text p { margin-bottom: 1.2em; }
 .servicos-text p:last-of-type { margin-bottom: 1.6em; }
+@media (max-width: 900px) {
+  .servicos-text { text-align: left; }
+}
 
 /* ---------- Orçamento (home) ---------- */
 .orcamento-grid {
@@ -353,7 +369,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 .form-field--file input { padding: 10px 20px; }
 
 .trust-badges {
-  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+  margin: 50px auto 0;
+  max-width: 900px;
   background: var(--color-yellow);
   border-radius: var(--radius-lg);
   padding: 28px 40px;
@@ -594,6 +613,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* ---------- Contato ---------- */
 .contato-card {
+  position: relative;
+  overflow: hidden;
   background: var(--color-gray);
   color: var(--color-white);
   border-radius: 0 var(--radius-xl) 0 var(--radius-xl);
@@ -603,6 +624,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   gap: 40px;
 }
 .contato-card .form-field label { color: var(--color-white); }
+.contato-card__form,
+.contato-card__channels { position: relative; z-index: 1; }
 .contato-card__channels h3 {
   color: var(--color-yellow);
   font-style: italic;

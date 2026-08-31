@@ -42,16 +42,13 @@
 
   <!-- SERVIÇOS -->
   <section class="section section--light" id="servicos">
+    <div class="stripe-overlay stripe-overlay--gray" aria-hidden="true"></div>
     <p class="section__bg-title display-title display-title--gray text-center">NOSSOS<br>SERVIÇOS</p>
     <div class="container section__content">
       <div class="servicos-grid">
         <div class="servicos-card">
           <img class="servicos-card__img" src="assets/img/servico-fachada.jpg" alt="Revitalização de fachada predial pela Abriz Engenharia">
           <div class="servicos-card__tag">REVITALIZAÇÃO DE FACHADA</div>
-          <div class="servicos-card__nav">
-            <button aria-label="Anterior">&#10094;</button>
-            <button aria-label="Próximo">&#10095;</button>
-          </div>
         </div>
         <div class="servicos-text">
           <p class="fs-body" style="font-size:var(--fs-body); font-weight:300;">Há mais de 25 anos no mercado da construção civil, a Abriz Engenharia é especializada em pinturas prediais e manutenção. Se você procura por rapidez e eficiência em sua obra, somos a empresa certa para você!</p>
@@ -63,7 +60,9 @@
 
   <!-- ORÇAMENTO -->
   <section class="section section--dark" id="orcamento">
-    <p class="section__bg-title display-title display-title--yellow text-center">ORÇAMENTO</p>
+    <div class="section__photo-bg" aria-hidden="true"></div>
+    <div class="stripe-overlay stripe-overlay--yellow" aria-hidden="true"></div>
+    <p class="section__bg-title section__bg-title--left display-title display-title--yellow">ORÇAMENTO</p>
     <div class="container section__content">
       <div class="orcamento-grid">
         <form class="quote-form" data-form novalidate>
@@ -86,9 +85,6 @@
           <button type="submit" class="btn">Enviar</button>
           <p class="form-feedback" role="status" hidden></p>
         </form>
-        <div class="photo" style="aspect-ratio: 582/650;">
-          <img src="assets/img/servico-fachada.jpg" alt="Foto de fachada em revitalização">
-        </div>
       </div>
 
       <div class="trust-badges">
