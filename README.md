@@ -26,17 +26,17 @@ Site institucional da Abriz Engenharia, construído em **HTML + CSS + JavaScript
 | Grid desktop | 12 colunas / largura 80 / gutter 30 |
 | Grid mobile | 4 colunas / largura 70 / gutter 24 |
 
-## ⚠️ Limitação conhecida: fotos placeholder
+## Fotos
 
-O ambiente onde este site foi gerado **bloqueia downloads externos** (Figma, Unsplash, CDNs de imagem). Por isso, todas as fotos do protótipo (hero, fachadas, equipe, obras) foram substituídas por **blocos de cor placeholder** — o layout, cores, tipografia, espaçamentos e componentes seguem fielmente o Figma, só as fotos reais estão faltando.
+As fotos exportadas do Figma já estão aplicadas em `assets/img/`:
 
-**Como resolver:** no Figma, clique com o botão direito em cada imagem → **Export** → PNG/JPG, e me envie os arquivos (ou coloque-os direto em `assets/img/` com os nomes abaixo) que eu faço a troca:
+- `hero-bg.jpg` — foto do canteiro de obras, usada no hero de todas as páginas
+- `servico-fachada.jpg` — foto do trabalho de revitalização de fachada, usada na seção "Nossos Serviços", na foto "Sobre nós", no card "Trabalhe conosco" e no lightbox do portfólio
+- `logo-abriz.png` — logo real da marca (isolado do gráfico do hero via corte por canal alfa), usado no hero da Home e no rodapé de todas as páginas
 
-- `assets/img/hero-home.jpg` — foto do hero da Home
-- `assets/img/hero-sobre.jpg`, `assets/img/hero-portfolio.jpg`, `assets/img/hero-contato.jpg`
-- `assets/img/servico-fachada.jpg` — foto da seção "Nossos Serviços"
-- `assets/img/equipe-fernando.jpg`, `assets/img/equipe-sandro.jpg`
-- `assets/img/obra-1.jpg` … `assets/img/obra-9.jpg` — grade do portfólio
+**Ainda faltam** (o Figma original também usa placeholders genéricos nesses pontos, então não é urgente):
+- Fotos de retrato de **Fernando Abriz** e **Sandro** (página Sobre Nós) — hoje são placeholders cinza.
+- Fotos individuais de cada obra do **Portfólio** (hoje são blocos de cor, como no protótipo original) — se você tiver fotos de projetos específicos, exporte como `assets/img/obra-1.jpg` … `obra-9.jpg` e me envie que eu conecto no grid e no lightbox.
 
 ## Rodar localmente
 
@@ -53,11 +53,7 @@ python3 -m http.server 8080
 
 ## 1. GitHub (já configurado)
 
-Este projeto já está no repositório `laisfortis/abrizEngenhariaLandingPage`, na branch `claude/figma-to-published-site-of782j`. Para colocar no ar, uma opção simples é usar essa branch diretamente no passo 2 (Vercel/Netlify permitem escolher qualquer branch) — ou, se preferir manter `main` como fonte da verdade:
-
-1. Abra o repositório no GitHub.
-2. Crie um **Pull Request** da branch `claude/figma-to-published-site-of782j` para `main`.
-3. Revise e clique em **Merge**.
+O site já está no repositório `laisfortis/abrizEngenhariaLandingPage`, na branch `main` — pronto para conectar no passo 2 abaixo.
 
 ## 2. Publicar com Vercel (recomendado — grátis, deploy automático a cada push)
 
