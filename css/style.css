@@ -184,21 +184,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: flex;
   align-items: flex-end;
 }
-.hero__stripes {
-  position: absolute;
-  inset: 0;
-  background-image: repeating-linear-gradient(
-    -55deg,
-    var(--color-yellow) 0px, var(--color-yellow) 6px,
-    transparent 6px, transparent 46px
-  );
-  opacity: 0.35;
-  mix-blend-mode: screen;
-}
+/* degradê: claro/transparente à esquerda, escuro à direita — igual ao protótipo */
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(100deg, rgba(64,62,62,0.88) 25%, rgba(64,62,62,0.45) 75%);
+  background: linear-gradient(90deg, rgba(30,29,29,0.1) 0%, rgba(30,29,29,0.55) 55%, rgba(20,19,19,0.88) 100%);
 }
 .hero__title {
   position: relative;
@@ -207,24 +197,42 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 60px 0 50px;
   text-align: center;
 }
-.hero--home { min-height: 640px; }
-.hero__panel {
+
+/* Hero da Home: foto em tela cheia, logo à esquerda, chevron à direita */
+.hero--home {
+  min-height: 640px;
+  align-items: center;
+}
+.hero--home .hero__chevron {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero--home .hero__content {
   position: relative;
   z-index: 2;
-  margin: 60px auto 0;
-  max-width: 950px;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 947 / 636;
-  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat;
-  border: 6px solid var(--color-yellow);
+  width: 100%;
 }
-.hero__panel-logo {
+.hero__logo {
+  width: min(38vw, 420px);
+  margin-left: 6%;
+}
+.hero__dots {
   position: absolute;
-  left: 6%;
-  top: 12%;
-  width: 55%;
-  max-width: 420px;
+  right: 6%;
+  bottom: 8%;
+  z-index: 2;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 6px;
+}
+@media (max-width: 900px) {
+  .hero--home { min-height: 420px; }
+  .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
+  .hero--home .hero__chevron { opacity: 0.7; }
 }
 
 /* ---------- Sections genéricas ---------- */
@@ -252,21 +260,23 @@ ul { list-style: none; margin: 0; padding: 0; }
 .section__content { position: relative; z-index: 2; }
 
 /* textura diagonal decorativa — usada atrás das seções em todo o site no Figma
-   (não só no hero): cinza sobre fundos claros, amarela sobre fundos escuros */
+   (não só no hero): chevron cinza (aponta p/ esquerda) sobre fundos claros,
+   chevron amarelo (aponta p/ direita) sobre fundos escuros, sempre encostado
+   na borda direita da seção. */
 .stripe-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: 45%;
   z-index: 0;
   pointer-events: none;
-  background-image: repeating-linear-gradient(
-    -55deg,
-    var(--stripe-color, var(--color-gray)) 0px, var(--stripe-color, var(--color-gray)) 6px,
-    transparent 6px, transparent 46px
-  );
-  opacity: var(--stripe-opacity, 0.4);
+  object-fit: contain;
+  object-position: right center;
 }
-.stripe-overlay--gray { --stripe-color: #585656; --stripe-opacity: 0.35; }
-.stripe-overlay--yellow { --stripe-color: #F6D143; --stripe-opacity: 0.55; }
+.stripe-overlay--gray { opacity: 0.6; }
+.stripe-overlay--yellow { opacity: 0.85; }
 
 .section__photo-bg {
   position: absolute;
