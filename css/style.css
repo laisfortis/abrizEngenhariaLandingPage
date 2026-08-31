@@ -254,10 +254,39 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-align: left;
   padding-left: 40px;
 }
+.section__bg-title--right {
+  top: auto;
+  bottom: 6%;
+  transform: none;
+  text-align: right;
+  padding-right: 40px;
+}
 @media (max-width: 768px) {
   .section__bg-title--left { padding-left: 20px; }
+  .section__bg-title--right { padding-right: 20px; }
 }
 .section__content { position: relative; z-index: 2; }
+
+/* divisor entre o hero e a próxima seção: barra cinza + triângulo apontando
+   para baixo, marcando a transição (como no protótipo) */
+.section-divider {
+  position: relative;
+  height: 56px;
+  background: var(--color-gray);
+  z-index: 3;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  border-top: 38px solid var(--color-gray);
+}
 
 /* textura diagonal decorativa — usada atrás das seções em todo o site no Figma
    (não só no hero): chevron cinza (aponta p/ esquerda) sobre fundos claros,
@@ -309,17 +338,18 @@ ul { list-style: none; margin: 0; padding: 0; }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Serviços (home) ---------- */
-.servicos-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gutter);
-  align-items: center;
+/* Card único: foto à esquerda + painel amarelo à direita, cantos arredondados
+   por fora só (como no protótipo) */
+.servicos-combo {
+  display: flex;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 460px;
 }
 .servicos-card {
   position: relative;
-  border-radius: var(--radius-lg);
+  flex: 0 0 45%;
   overflow: hidden;
-  aspect-ratio: 559/526;
 }
 .servicos-card__img {
   position: absolute;
@@ -342,7 +372,23 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-card);
   z-index: 1;
 }
-.servicos-text { text-align: right; }
+.servicos-text {
+  flex: 1;
+  background: var(--color-yellow);
+  color: #2f2e2e;
+  text-align: right;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 24px;
+}
+@media (max-width: 900px) {
+  .servicos-combo { flex-direction: column; min-height: 0; }
+  .servicos-card { flex-basis: auto; aspect-ratio: 559/400; }
+  .servicos-text { text-align: left; align-items: flex-start; padding: 30px; }
+}
 .servicos-text p { margin-bottom: 1.2em; }
 .servicos-text p:last-of-type { margin-bottom: 1.6em; }
 @media (max-width: 900px) {
