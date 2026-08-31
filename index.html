@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abriz Engenharia | Pinturas prediais e manutenção</title>
+<meta name="description" content="Há mais de 25 anos no mercado da construção civil, a Abriz Engenharia é especializada em pinturas prediais e manutenção.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html" class="is-active">Home</a>
+      <a href="sobre.html">Sobre nós</a>
+      <a href="index.html#servicos">Serviços</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contato.html">Contato</a>
+      <a href="contato.html" class="btn nav-cta-mobile">Solicite um orçamento</a>
+    </nav>
+    <a href="contato.html" class="btn nav-cta">Solicite um orçamento</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero hero--home">
+    <div class="hero__stripes" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="container hero__title">
+      <div class="hero__panel photo-placeholder" role="img" aria-label="Foto de obra em andamento">
+        Foto de obra<br>(substituir pelo asset exportado do Figma)
+      </div>
+      <p style="color:#fff; opacity:.6; letter-spacing:6px; margin-top:16px;">••••</p>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="section section--light" id="servicos">
+    <p class="section__bg-title display-title display-title--gray text-center">NOSSOS<br>SERVIÇOS</p>
+    <div class="container section__content">
+      <div class="servicos-grid">
+        <div class="servicos-card photo-placeholder">
+          <div class="servicos-card__tag">REVITALIZAÇÃO DE FACHADA</div>
+          <div class="servicos-card__nav">
+            <button aria-label="Anterior">&#10094;</button>
+            <button aria-label="Próximo">&#10095;</button>
+          </div>
+        </div>
+        <div class="servicos-text">
+          <p class="fs-body" style="font-size:var(--fs-body); font-weight:300;">Há mais de 25 anos no mercado da construção civil, a Abriz Engenharia é especializada em pinturas prediais e manutenção. Se você procura por rapidez e eficiência em sua obra, somos a empresa certa para você!</p>
+          <a href="contato.html" class="btn btn--gray">Entre em contato</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO -->
+  <section class="section section--dark" id="orcamento">
+    <p class="section__bg-title display-title display-title--yellow text-center">ORÇAMENTO</p>
+    <div class="container section__content">
+      <div class="orcamento-grid">
+        <form class="quote-form" data-form novalidate>
+          <div class="form-field">
+            <label for="q-nome">Nome:</label>
+            <input type="text" id="q-nome" name="nome" required>
+          </div>
+          <div class="form-field">
+            <label for="q-telefone">Telefone:</label>
+            <input type="tel" id="q-telefone" name="telefone" required>
+          </div>
+          <div class="form-field">
+            <label for="q-email">E-mail:</label>
+            <input type="email" id="q-email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="q-msg">Conte-nos sua necessidade:</label>
+            <textarea id="q-msg" name="mensagem" required></textarea>
+          </div>
+          <button type="submit" class="btn">Enviar</button>
+          <p class="form-feedback" role="status" hidden></p>
+        </form>
+        <div class="photo-placeholder" style="aspect-ratio: 582/650;">Foto de fachada</div>
+      </div>
+
+      <div class="trust-badges">
+        <div class="trust-badges__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 16V7a1 1 0 0 1 1-1h9v10"/><path d="M13 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+          <span>Rapidez na<br>sua obra</span>
+        </div>
+        <div class="trust-badges__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m9 12 2 2 4-4"/><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"/></svg>
+          <span>Confiança<br>garantida</span>
+        </div>
+        <div class="trust-badges__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l5-4 5 4v12"/><path d="M14 21V13h6v8"/><path d="M8 10h.01M8 14h.01M8 18h.01"/></svg>
+          <span>+25 anos no<br>mercado</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBRAS (preview do portfólio) -->
+  <section>
+    <div class="obras-grid">
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+      <a href="portfolio.html" class="obras-grid__item"><span class="obras-grid__label">OBRA</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contato-footer">
+  <div class="container footer-grid">
+    <div>
+      <svg class="footer-logo" viewBox="0 0 190 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30 4 L54 60 L42 60 L26 20 L10 60 L0 60 Z" fill="#F6D143"/>
+        <text x="34" y="46" font-family="Sofia Sans, sans-serif" font-weight="900" font-style="italic" font-size="30" fill="#fff">BRIZ</text>
+        <text x="0" y="66" font-family="Sofia Sans, sans-serif" font-weight="500" font-size="10" letter-spacing="2" fill="#fff">ENGENHARIA</text>
+      </svg>
+      <div class="footer-social">
+        <a href="https://instagram.com/abrizengenharia" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <a href="https://wa.me/5511900000000" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1c.5 1 .8 2.2.8 3.4Z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>
+        </a>
+        <a href="index.html" aria-label="Idioma">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-links">
+      <a href="sobre.html">Sobre nós</a>
+      <a href="index.html#servicos">Serviços</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contato.html">Contato</a>
+      <a href="index.html#orcamento">Orçamento</a>
+    </nav>
+
+    <div class="footer-contact">
+      <p>Atendimento</p>
+      <p class="light">Seg. a Sex. — 8h00 às 18h00</p>
+      <p>CNPJ: 000.000.000-00</p>
+      <p>São Paulo - SP</p>
+      <p class="light">@abrizengenharia</p>
+      <p class="light">+55 11 90000-0000</p>
+      <p class="light">www.abrizengenharia.com.br</p>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; <span id="year"></span> Abriz Engenharia. Todos os direitos reservados.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
