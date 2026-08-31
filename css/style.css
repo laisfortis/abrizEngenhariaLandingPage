@@ -422,9 +422,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   grid-template-columns: 1fr 1fr;
   gap: var(--gutter);
   align-items: center;
-  margin-top: -140px;
-  position: relative;
-  z-index: 3;
+  margin-top: 60px;
 }
 .sobre-intro__text {
   background: var(--color-yellow);
@@ -460,9 +458,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gutter);
-  margin-top: -100px;
-  position: relative;
-  z-index: 3;
+  margin-top: 60px;
 }
 .stat-box {
   background: var(--color-white);
@@ -504,8 +500,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .sobre-intro, .servicos-grid, .orcamento-grid, .team-grid, .stats-row, .testimonials {
     grid-template-columns: 1fr;
   }
-  .sobre-intro { margin-top: 20px; }
-  .stats-row { margin-top: 30px; }
   .obras-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
