@@ -202,7 +202,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* Hero da Home: foto em tela cheia, logo à esquerda, chevron à direita */
 .hero--home {
-  min-height: 640px;
+  min-height: 623px;
   align-items: center;
 }
 /* largura fixa e igual à do chevron das seções abaixo, para as linhas se
@@ -210,7 +210,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .hero--home .hero__chevron {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 71px;
   width: var(--chevron-w);
   height: auto;
   z-index: 1;
@@ -222,8 +222,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   width: 100%;
 }
 .hero__logo {
-  width: min(38vw, 420px);
-  margin-left: 6%;
+    width: min(38vw, 520px);
+    margin-left: 15%;
 }
 .hero__dots {
   position: absolute;
@@ -233,17 +233,29 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: rgba(255,255,255,0.6);
   letter-spacing: 6px;
 }
+.right_listra_cinza{
+  right: 311px !important;
+}
+.listras-orcamento-home{
+  right: 114px !important;
+}
+
 @media (max-width: 900px) {
-  .hero--home { min-height: 420px; }
+  .hero--home { min-height: 368px; }
+  .hero--home .hero__chevron {right: 15px;}
   .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
   .hero--home .hero__chevron { opacity: 0.7; }
+  .right_listra_cinza { right: 160px !important;}
+  .section-divider{ height: 27px !important;}
+  .section--light { height: 367px !important;}
+  .listras-orcamento-home { right: 45px !important;}
 }
 @media (max-width: 600px) {
   :root { --chevron-w: 200px; }
 }
 
 /* ---------- Sections genéricas ---------- */
-.section { position: relative; padding: 90px 0; }
+.section { position: relative; padding: 83px 0; }
 .section--light { background: var(--color-placeholder-light); }
 .section--dark { background: var(--color-gray); color: var(--color-white); }
 .section--yellow { background: var(--color-yellow); }
@@ -302,7 +314,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .stripe-overlay {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0px;
   width: var(--chevron-w);
   height: auto;
   z-index: 0;
