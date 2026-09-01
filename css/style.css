@@ -609,6 +609,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 .footer-links a { font-weight: 700; font-size: var(--fs-nav); text-transform: uppercase; }
 .footer-contact p { margin-bottom: 10px; font-weight: 700; }
 .footer-contact .light { font-weight: 400; }
+.footer-contact .icon-line { display: flex; align-items: center; gap: 6px; }
+.footer-contact .icon-line svg { width: 13px; height: 13px; flex-shrink: 0; }
 .footer-social { display: flex; gap: 16px; margin-top: 16px; }
 .footer-social a {
   width: 34px; height: 34px;
