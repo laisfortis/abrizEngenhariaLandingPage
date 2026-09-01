@@ -342,18 +342,46 @@ ul { list-style: none; margin: 0; padding: 0; }
 .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Serviços (home) ---------- */
-/* Card único: foto à esquerda + painel amarelo à direita, cantos arredondados
-   por fora só (como no protótipo) */
+/* Dois containers independentes: painel amarelo atrás (ocupa tudo) e o card
+   da foto flutuando por cima, sobrepondo a parte esquerda do amarelo — cada
+   um com seus próprios cantos arredondados, como no protótipo. */
 .servicos-combo {
-  display: flex;
+  position: relative;
+  min-height: 620px;
+}
+.servicos-text {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-yellow);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 460px;
+  color: #2f2e2e;
+  text-align: right;
+  padding: 60px 50px 50px 46%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+}
+.servicos-bg-title {
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  z-index: 2;
+  text-align: right;
+  pointer-events: none;
+  font-size: clamp(1.8rem, 5vw, 4.25rem);
 }
 .servicos-card {
-  position: relative;
-  flex: 0 0 45%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: 48%;
+  aspect-ratio: 559/526;
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
 }
 .servicos-card__img {
   position: absolute;
@@ -376,27 +404,30 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: var(--radius-card);
   z-index: 1;
 }
-.servicos-text {
-  flex: 1;
-  background: var(--color-yellow);
-  color: #2f2e2e;
-  text-align: right;
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 24px;
-}
-@media (max-width: 900px) {
-  .servicos-combo { flex-direction: column; min-height: 0; }
-  .servicos-card { flex-basis: auto; aspect-ratio: 559/400; }
-  .servicos-text { text-align: left; align-items: flex-start; padding: 30px; }
-}
 .servicos-text p { margin-bottom: 1.2em; }
 .servicos-text p:last-of-type { margin-bottom: 1.6em; }
 @media (max-width: 900px) {
-  .servicos-text { text-align: left; }
+  .servicos-combo { min-height: 0; }
+  .servicos-text {
+    position: static;
+    padding: 30px;
+    text-align: left;
+    align-items: flex-start;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+  .servicos-bg-title {
+    position: static;
+    text-align: left;
+    padding: 0 30px 20px;
+  }
+  .servicos-card {
+    position: relative;
+    left: auto; top: auto; bottom: auto;
+    width: 88%;
+    margin: 0 auto -60px;
+    aspect-ratio: 559/400;
+    z-index: 1;
+  }
 }
 
 /* ---------- Orçamento (home) ---------- */
