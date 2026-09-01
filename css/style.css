@@ -604,7 +604,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 @media (max-width: 768px) {
   .footer-grid { padding: 0 20px; }
 }
-.footer-logo { width: 190px; margin-bottom: 20px; }
+.footer-logo { width: 350px; }
 .footer-links { display: flex; flex-direction: column; gap: 14px; text-align: right; }
 .footer-links a { font-weight: 700; font-size: var(--fs-nav); text-transform: uppercase; }
 .footer-contact p { margin-bottom: 10px; font-weight: 700; }
