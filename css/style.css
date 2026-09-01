@@ -434,7 +434,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 #orcamento .servicos-text {
   text-align: left;
   align-items: flex-start;
-  padding: 60px 36% 50px 50px;
+  padding: 24px 36% 50px 50px;
   border-radius: 50px 0px;
 }
 #orcamento .servicos-bg-title {
@@ -448,8 +448,19 @@ ul { list-style: none; margin: 0; padding: 0; }
   border-radius: 50px 0px;
 }
 #orcamento .servicos-combo { min-height: 459px; }
-#orcamento .servicos-text form { width: 100%; }
+#orcamento .servicos-text form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
 #orcamento .form-field { margin-bottom: 8px; }
+#orcamento .form-field--half { grid-column: span 1; }
+#orcamento .form-field--full,
+#orcamento .quote-form > button,
+#orcamento .quote-form > .form-feedback {
+  grid-column: 1 / -1;
+}
 #orcamento .form-field label {
   color: #2f2e2e;
   font-size: 0.95rem;
@@ -460,7 +471,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 7px 16px;
   font-size: 0.9rem;
 }
-#orcamento .form-field textarea { min-height: 56px; }
+#orcamento .form-field--full textarea { min-height: 96px; }
+#orcamento .quote-form > button { justify-self: start; }
 @media (max-width: 900px) {
   .servicos-combo { min-height: 0; }
   .servicos-text {
