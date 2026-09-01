@@ -335,7 +335,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url('../assets/img/hero-bg.jpg') center/cover no-repeat;
+  background: #585656;
   opacity: 0.3;
 }
 
