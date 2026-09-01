@@ -107,7 +107,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   color: var(--color-yellow);
 }
 .btn--sm { width: 123px; padding: 0; }
-
+.btn--contact {height: 35px !important; padding: 0 13px !important; font-size: 13px !important;}
 /* ---------- Header / navegação ---------- */
 .site-header {
   position: sticky;
@@ -274,11 +274,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding-left: 40px;
 }
 .section__bg-title--right {
-  top: auto;
-  bottom: 6%;
-  transform: none;
-  text-align: right;
-  padding-right: 40px;
+    top: auto;
+    bottom: 1%;
+    transform: none;
+    text-align: right;
+    padding-right: 40px;
+    margin-bottom: 0 !important;
+    right: 1%;
+    font-size: 80px;
 }
 @media (max-width: 768px) {
   .section__bg-title--left { padding-left: 20px; }
@@ -358,10 +361,11 @@ ul { list-style: none; margin: 0; padding: 0; }
    por fora só (como no protótipo) */
 .servicos-combo {
   display: flex;
-  border-radius: var(--radius-lg);
+  border-radius: 0px 50px;
   overflow: hidden;
   min-height: 460px;
 }
+
 .servicos-card {
   position: relative;
   flex: 0 0 45%;
@@ -397,7 +401,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: start;
   gap: 24px;
 }
 @media (max-width: 900px) {
@@ -405,7 +409,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   .servicos-card { flex-basis: auto; aspect-ratio: 559/400; }
   .servicos-text { text-align: left; align-items: flex-start; padding: 30px; }
 }
-.servicos-text p { margin-bottom: 1.2em; }
 .servicos-text p:last-of-type { margin-bottom: 1.6em; }
 @media (max-width: 900px) {
   .servicos-text { text-align: left; }
