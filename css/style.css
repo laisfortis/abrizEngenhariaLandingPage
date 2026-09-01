@@ -447,6 +447,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: -30px;
   border-radius: 50px 0px;
 }
+#orcamento .servicos-combo { min-height: 620px; }
+#orcamento .servicos-text form { width: 100%; }
+#orcamento .form-field { margin-bottom: 14px; }
+#orcamento .form-field label { color: #2f2e2e; }
 @media (max-width: 900px) {
   .servicos-combo { min-height: 0; }
   .servicos-text {
@@ -460,6 +464,12 @@ ul { list-style: none; margin: 0; padding: 0; }
     position: static;
     text-align: left;
     padding: 0 30px 20px;
+  }
+  /* no mobile o título sai da caixa amarela e cai sobre o fundo escuro da
+     seção — cinza sobre cinza fica ilegível, então usa amarelo aqui */
+  #orcamento .servicos-bg-title {
+    color: var(--color-yellow);
+    opacity: 0.45;
   }
   .servicos-card {
     position: relative;

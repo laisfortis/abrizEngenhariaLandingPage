@@ -63,10 +63,28 @@
     <div class="section__photo-bg" aria-hidden="true"></div>
     <img class="stripe-overlay stripe-overlay--yellow listras-orcamento-home" src="assets/img/chevron-yellow-right.png" alt="" aria-hidden="true">
     <div class="container section__content container_nossos_servicos">
-      <div class="servicos-combo">
+      <div class="servicos-combo servicos-combo--form">
         <div class="servicos-text">
-          <p class="fs-body" style="font-size: 20px; font-weight:300;">Há mais de 25 anos no mercado da construção civil, <br> a Abriz Engenharia é especializada em pinturas <br> prediais e manutenção. Se você procura por rapidez <br> e eficiência em sua obra, somos a empresa certa <br> para você!</p>
-          <a href="contato.html" class="btn btn--gray btn--contact">Entre em contato</a>
+          <form class="quote-form" data-form novalidate>
+            <div class="form-field">
+              <label for="orc-nome">Nome:</label>
+              <input type="text" id="orc-nome" name="nome" required>
+            </div>
+            <div class="form-field">
+              <label for="orc-telefone">Telefone:</label>
+              <input type="tel" id="orc-telefone" name="telefone" required>
+            </div>
+            <div class="form-field">
+              <label for="orc-email">E-mail:</label>
+              <input type="email" id="orc-email" name="email" required>
+            </div>
+            <div class="form-field">
+              <label for="orc-msg">Conte-nos sua necessidade:</label>
+              <textarea id="orc-msg" name="mensagem" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--gray">Enviar</button>
+            <p class="form-feedback" role="status" hidden></p>
+          </form>
         </div>
         <p class="servicos-bg-title display-title display-title--gray">ORÇAMENTO</p>
         <div class="servicos-card">
