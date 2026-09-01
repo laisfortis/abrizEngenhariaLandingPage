@@ -447,10 +447,20 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: -30px;
   border-radius: 50px 0px;
 }
-#orcamento .servicos-combo { min-height: 620px; }
+#orcamento .servicos-combo { min-height: 459px; }
 #orcamento .servicos-text form { width: 100%; }
-#orcamento .form-field { margin-bottom: 14px; }
-#orcamento .form-field label { color: #2f2e2e; }
+#orcamento .form-field { margin-bottom: 8px; }
+#orcamento .form-field label {
+  color: #2f2e2e;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+#orcamento .form-field input,
+#orcamento .form-field textarea {
+  padding: 7px 16px;
+  font-size: 0.9rem;
+}
+#orcamento .form-field textarea { min-height: 56px; }
 @media (max-width: 900px) {
   .servicos-combo { min-height: 0; }
   .servicos-text {
