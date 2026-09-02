@@ -535,10 +535,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 .form-field textarea { border-radius: 24px; min-height: 110px; resize: vertical; }
 .form-field--file input { padding: 10px 20px; }
 
+/* Barra de confiança: sobrepõe a seção acima (escura) e a seção abaixo
+   (clara), flutuando exatamente na emenda entre as duas, como no protótipo */
 .trust-badges {
   position: relative;
-  z-index: 2;
-  margin: 50px auto 0;
+  z-index: 6;
+  margin: -55px auto -55px;
   max-width: 900px;
   background: var(--color-yellow);
   border-radius: var(--radius-lg);
@@ -547,6 +549,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   flex-wrap: wrap;
   gap: 24px;
   justify-content: space-around;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 .trust-badges__item {
   display: flex;
@@ -560,6 +563,16 @@ ul { list-style: none; margin: 0; padding: 0; }
   line-height: 1.1;
 }
 .trust-badges__item svg { flex-shrink: 0; width: 40px; height: 40px; }
+@media (max-width: 900px) {
+  .trust-badges {
+    margin: -30px 20px -30px;
+    padding: 20px;
+    gap: 16px;
+    justify-content: center;
+  }
+  .trust-badges__item { font-size: 0.9rem; gap: 10px; }
+  .trust-badges__item svg { width: 30px; height: 30px; }
+}
 
 /* ---------- Grid de obras (home preview + portfólio) ---------- */
 .obras-grid {
