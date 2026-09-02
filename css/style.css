@@ -438,7 +438,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 /* Orçamento: mesmo combo do Serviços, espelhado — texto à esquerda,
    foto flutuante à direita. Fundo e listras da seção não mudam. */
-#orcamento .servicos-text {
+#orcamento .servicos-text,
+#sobre-intro .servicos-text {
   text-align: left;
   align-items: flex-start;
   padding: 24px 36% 50px 50px;
@@ -449,12 +450,14 @@ ul { list-style: none; margin: 0; padding: 0; }
   left: 40px;
   text-align: left;
 }
-#orcamento .servicos-card {
+#orcamento .servicos-card,
+#sobre-intro .servicos-card {
   left: auto;
   right: -30px;
   border-radius: 50px 0px;
 }
-#orcamento .servicos-combo { min-height: 459px; }
+#orcamento .servicos-combo,
+#sobre-intro .servicos-combo { min-height: 459px; }
 #orcamento .servicos-text form {
   width: 100%;
   display: grid;
