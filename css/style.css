@@ -553,12 +553,13 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .trust-badges__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
   color: var(--color-gray);
   font-weight: 800;
   font-size: 1.1rem;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   line-height: 1.1;
 }
@@ -570,7 +571,7 @@ ul { list-style: none; margin: 0; padding: 0; }
     gap: 16px;
     justify-content: center;
   }
-  .trust-badges__item { font-size: 0.9rem; gap: 10px; }
+  .trust-badges__item { font-size: 0.9rem; gap: 6px; }
   .trust-badges__item svg { width: 30px; height: 30px; }
 }
 
