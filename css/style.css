@@ -685,8 +685,8 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 
 .team-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
   gap: 60px;
   max-width: 900px;
   margin: 0 auto;
@@ -743,9 +743,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 .testimonial-box p { font-style: italic; }
 
 @media (max-width: 900px) {
-  .sobre-intro, .servicos-grid, .orcamento-grid, .team-grid, .stats-row, .testimonials {
+  .sobre-intro, .servicos-grid, .orcamento-grid, .stats-row, .testimonials {
     grid-template-columns: 1fr;
   }
+  .team-grid { flex-wrap: wrap; }
   .obras-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
