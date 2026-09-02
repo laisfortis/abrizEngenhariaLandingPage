@@ -550,7 +550,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin: -55px auto -91px;
   max-width: 900px;
   background: var(--color-yellow);
-  border-radius: var(--radius-lg);
+  border-radius: 23px;
   padding: 28px 40px;
   display: flex;
   flex-wrap: wrap;
@@ -570,7 +570,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-transform: uppercase;
   line-height: 1.1;
 }
-.trust-badges__item img { flex-shrink: 0; width: 40px; height: 40px; object-fit: contain; }
+.trust-badges__item img { flex-shrink: 0; width: 70px; height: 40px; object-fit: contain; }
 @media (max-width: 900px) {
   .trust-badges {
     margin: -56px 20px -56px;
