@@ -570,7 +570,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   text-transform: uppercase;
   line-height: 1.1;
 }
-.trust-badges__item svg { flex-shrink: 0; width: 40px; height: 40px; }
+.trust-badges__item img { flex-shrink: 0; width: 40px; height: 40px; object-fit: contain; }
 @media (max-width: 900px) {
   .trust-badges {
     margin: -56px 20px -56px;
@@ -579,7 +579,7 @@ ul { list-style: none; margin: 0; padding: 0; }
     justify-content: center;
   }
   .trust-badges__item { font-size: 0.9rem; gap: 6px; }
-  .trust-badges__item svg { width: 30px; height: 30px; }
+  .trust-badges__item img { width: 30px; height: 30px; }
 }
 
 /* ---------- Grid de obras (home preview + portfólio) ---------- */
