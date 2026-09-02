@@ -547,7 +547,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .trust-badges {
   position: relative;
   z-index: 6;
-  margin: -55px auto -55px;
+  margin: -75px auto -75px;
   max-width: 900px;
   background: var(--color-yellow);
   border-radius: var(--radius-lg);
@@ -573,7 +573,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .trust-badges__item svg { flex-shrink: 0; width: 40px; height: 40px; }
 @media (max-width: 900px) {
   .trust-badges {
-    margin: -30px 20px -30px;
+    margin: -56px 20px -56px;
     padding: 20px;
     gap: 16px;
     justify-content: center;
