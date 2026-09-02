@@ -63,6 +63,10 @@ ul { list-style: none; margin: 0; padding: 0; }
 .container_nossos_servicos{
   width: 1040px;
 }
+
+.section-page--sobre{
+  padding-bottom: 0px !important;
+}
 @media (max-width: 1080px) {
   .container_nossos_servicos { width: 100%; }
 }
@@ -245,7 +249,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .listras-orcamento-home{
   right: 114px !important;
 }
-
+.height-sobre-page{
+  min-height: 580px;
+}
 @media (max-width: 900px) {
   .hero--home { min-height: 368px; }
   .hero--home .hero__chevron {right: 15px;}
@@ -685,7 +691,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   max-width: 900px;
   margin: 0 auto;
 }
-.team-card { text-align: center; }
+.team-card { text-align: center; width: 250px;}
 .team-card__photo {
   aspect-ratio: 1/1.28;
   border-radius: 24px;
