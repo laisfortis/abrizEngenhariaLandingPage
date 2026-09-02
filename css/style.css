@@ -339,6 +339,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   opacity: 0.3;
 }
 
+.section__photo-bg-sobre {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+}
+
 /* placeholder de foto (ainda sem asset real — ex: retratos da equipe) */
 .photo-placeholder {
   background: linear-gradient(135deg, var(--color-placeholder-a), var(--color-placeholder-b));
