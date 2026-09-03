@@ -820,6 +820,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 /* ---------- Contato ---------- */
 .contato-card {
   position: relative;
+  z-index: 2;
   overflow: hidden;
   background: var(--color-gray);
   color: var(--color-white);
@@ -841,16 +842,22 @@ ul { list-style: none; margin: 0; padding: 0; }
   margin-bottom: 24px;
 }
 .channel-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
   color: var(--color-yellow);
   font-size: 1.3rem;
   margin-bottom: 18px;
 }
-.channel-item svg { width: 26px; height: 26px; flex-shrink: 0; }
+
+/* título gigante "CONTATO" espremido entre os dois cards, como no protótipo */
+.contato-bg-title {
+  position: relative;
+  z-index: 0;
+  text-align: center;
+  margin: -46px 0;
+}
 
 .trabalhe-card {
+  position: relative;
+  z-index: 2;
   background: var(--color-yellow);
   border-radius: var(--radius-xl) 0 var(--radius-xl) 0;
   padding: 50px;
@@ -858,7 +865,6 @@ ul { list-style: none; margin: 0; padding: 0; }
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-  margin-top: 60px;
 }
 .trabalhe-card h3 { font-style: italic; font-weight: 900; font-size: var(--fs-h1); color: var(--color-gray); }
 .trabalhe-card__lead { font-style: italic; font-size: 1.2rem; margin: 8px 0 20px; color: var(--color-gray); }
@@ -867,6 +873,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 @media (max-width: 900px) {
   .contato-card, .trabalhe-card { grid-template-columns: 1fr; padding: 30px; }
+  .contato-bg-title { margin: -16px 0; }
 }
 
 /* ---------- Utilidades ---------- */
