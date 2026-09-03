@@ -382,10 +382,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   min-height: 459px;
 }
-/* no desktop este wrapper não existe visualmente (display:contents),
-   então .servicos-text/.servicos-card continuam posicionados de forma
-   absoluta relativa ao .servicos-combo, exatamente como antes; no
-   mobile ele vira o card amarelo único que acompanha a foto */
+/* wrapper de agrupamento sem efeito no layout — .servicos-text e
+   .servicos-card continuam posicionados de forma absoluta relativa ao
+   .servicos-combo, em todos os tamanhos de tela (o mobile só reduz as
+   proporções, mantendo o mesmo layout sobreposto do desktop) */
 .servicos-combo__panel { display: contents; }
 .servicos-text {
   position: absolute;
@@ -496,57 +496,52 @@ ul { list-style: none; margin: 0; padding: 0; }
 #orcamento .form-field--full textarea { min-height: 96px; }
 #orcamento .quote-form > button { justify-self: start; }
 @media (max-width: 900px) {
-  .servicos-combo { min-height: 0; }
-  /* o painel vira o próprio card amarelo, contendo texto/form e foto
-     juntos — a foto fica sempre "dentro" do banner, como no card da
-     página Contato */
-  .servicos-combo__panel {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--color-yellow);
-    border-radius: var(--radius-lg);
-    padding: 30px;
-  }
+  /* mesmo layout sobreposto do desktop (texto atrás, foto flutuando
+     por cima de um canto), só com as proporções reduzidas para caber
+     numa tela menor sem invadir as listras da seção. O texto passa a
+     ficar no fluxo normal (para o card crescer com o conteúdo) e só a
+     foto continua absoluta, sobrepondo um dos cantos. */
+  .servicos-combo,
+  #orcamento .servicos-combo,
+  #sobre-intro .servicos-combo { min-height: 0; }
   .servicos-text {
-    position: static;
-    padding: 0;
-    background: transparent;
-    text-align: left;
-    align-items: flex-start;
-    border-radius: 0;
+    position: relative;
+    inset: auto;
+    padding: 30px 20px 56px 42%;
+    gap: 12px;
+    border-radius: 0 var(--radius-lg);
+  }
+  #orcamento .servicos-text,
+  #sobre-intro .servicos-text {
+    padding: 20px 42% 56px 20px;
+    border-radius: var(--radius-lg) 0;
   }
   #orcamento .servicos-text form {
     grid-template-columns: 1fr;
     gap: 0;
   }
   .servicos-bg-title {
-    position: static;
-    text-align: left;
-    padding: 0 30px 20px;
+    right: 16px;
+    bottom: 12px;
+    font-size: clamp(1.4rem, 6.5vw, 2.25rem);
   }
-  /* no mobile o título sai da caixa amarela e cai sobre o fundo escuro da
-     seção — cinza sobre cinza fica ilegível, então usa amarelo aqui */
   #orcamento .servicos-bg-title {
-    color: var(--color-yellow);
-    opacity: 0.45;
+    left: 16px;
   }
   .servicos-card {
-    position: relative;
-    left: auto; top: auto; bottom: auto; right: auto;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 559/400;
-    margin: 0;
-    box-shadow: none;
-    border-radius: var(--radius-lg);
-    order: -1;
+    left: -10px;
+    top: -12px;
+    width: 38%;
+    height: 220px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
   }
-  /* Serviços: foto acima do texto (ordem padrão). Orçamento/Sobre:
-     foto abaixo do texto/form, como no protótipo. */
   #orcamento .servicos-card,
   #sobre-intro .servicos-card {
-    order: 1;
+    right: -10px;
+  }
+  .servicos-card__tag {
+    font-size: 0.55rem;
+    padding: 6px 4px;
   }
 }
 
