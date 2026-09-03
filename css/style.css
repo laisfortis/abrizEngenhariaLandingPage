@@ -259,7 +259,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero--home .hero__chevron { opacity: 0.7; }
   .section-divider{ height: 27px !important;}
   .right_listra_cinza {
-        right: 178px !important;
+        right: 186px !important;
   }
   .listras-orcamento-home {
         right: 49px !important;
@@ -285,6 +285,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .testimonial-box {
     min-height: 134px !important;
+}
+.section-servicos{
+  padding: 79px 0 !important;
 }
 }
 @media (max-width: 600px) {
