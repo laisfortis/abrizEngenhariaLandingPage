@@ -499,6 +499,10 @@ ul { list-style: none; margin: 0; padding: 0; }
     align-items: flex-start;
     border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   }
+  #orcamento .servicos-text form {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
   .servicos-bg-title {
     position: static;
     text-align: left;
