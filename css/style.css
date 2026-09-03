@@ -825,10 +825,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   background: var(--color-gray);
   color: var(--color-white);
   border-radius: 0 var(--radius-xl) 0 var(--radius-xl);
-  padding: 50px;
+  padding: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 28px;
 }
 .contato-card .form-field label { color: var(--color-white); }
 .contato-card__form,
@@ -851,8 +851,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 .contato-bg-title {
   position: relative;
   z-index: 0;
-  text-align: center;
-  margin: -24px 0;
+  text-align: left;
+  font-size: clamp(3.5rem, 11vw, 11rem);
+  margin: -33px 0;
 }
 
 .trabalhe-card {
@@ -860,10 +861,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   z-index: 2;
   background: var(--color-yellow);
   border-radius: var(--radius-xl) 0 var(--radius-xl) 0;
-  padding: 50px;
+  padding: 36px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 28px;
   align-items: center;
 }
 .trabalhe-card h3 { font-style: italic; font-weight: 900; font-size: var(--fs-h1); color: var(--color-gray); }
@@ -872,7 +873,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 .trabalhe-card .photo-placeholder { aspect-ratio: 559/568; }
 
 @media (max-width: 900px) {
-  .contato-card, .trabalhe-card { grid-template-columns: 1fr; padding: 30px; }
+  .contato-card, .trabalhe-card { grid-template-columns: 1fr; padding: 26px; }
   .contato-bg-title { margin: 2px 0; }
 }
 
