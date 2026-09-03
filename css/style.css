@@ -526,6 +526,14 @@ ul { list-style: none; margin: 0; padding: 0; }
      seção conseguem chegar até o final dela */
   .servicos-text__lead { font-size: 13px; line-height: 1.3; }
   .servicos-text--lg { font-size: 14px; }
+  /* mais reserva embaixo (e menos em cima/entrelinhas) pro botão não
+     ficar sobre o título de fundo — sem aumentar a altura total */
+  #servicos .servicos-text {
+    padding-top: 8px;
+    padding-bottom: 66px;
+    gap: 4px;
+  }
+  #servicos .servicos-text__lead { line-height: 1.15; }
   #orcamento .servicos-text form {
     grid-template-columns: 1fr;
     gap: 0;
@@ -540,8 +548,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   }
   #orcamento .form-field--full textarea { min-height: 34px; }
   .servicos-text .btn--contact {
-    height: 26px !important;
-    font-size: 0.65rem !important;
+    height: 22px !important;
+    font-size: 0.6rem !important;
     padding: 0 10px !important;
   }
 
