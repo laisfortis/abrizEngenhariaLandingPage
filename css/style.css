@@ -119,13 +119,13 @@ ul { list-style: none; margin: 0; padding: 0; }
 .btn--sm { width: 123px; padding: 0; }
 .btn--contact {height: 35px !important; padding: 0 13px !important; font-size: 13px !important;}
 .form-or {
-  text-align: center;
+  text-align: left;
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.6;
-  margin: 4px 0;
+  margin: 5px 0 5px 10px;
 }
 .btn--whatsapp { gap: 8px; }
 .btn--whatsapp svg { width: 16px; height: 16px; flex-shrink: 0; }
@@ -279,7 +279,7 @@ ul { list-style: none; margin: 0; padding: 0; }
      --chevron-w do hero) pra altura delas acompanhar a seção */
   #servicos .right_listra_cinza,
   #orcamento .listras-orcamento-home {
-    width: 235px;
+    width: 285px;
   }
   .right_listra_cinza { 
         right: 186px !important;
@@ -524,6 +524,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 24px 36% 50px 50px;
   border-radius: 50px 0px;
 }
+/* card ganhou o botão extra do WhatsApp — padding mais enxuto pra
+   caber sem precisar aumentar o card (e desalinhar as listras) */
+#orcamento .servicos-text {
+  padding: 14px 36% 18px 50px;
+}
 #orcamento .servicos-bg-title {
   right: auto;
   left: 40px;
@@ -535,7 +540,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: -30px;
   border-radius: 50px 0px;
 }
-#orcamento .servicos-combo { min-height: 530px; }
+#orcamento .servicos-combo { min-height: 459px; }
 #sobre-intro .servicos-combo { min-height: 459px; }
 #orcamento .servicos-text form {
   width: 100%;
@@ -543,7 +548,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   grid-template-columns: 1fr 1fr;
   gap: 0 14px;
 }
-#orcamento .form-field { margin-bottom: 8px; }
+#orcamento .form-field { margin-bottom: 4px; }
 #orcamento .form-field--half { grid-column: span 1; }
 #orcamento .form-field--full,
 #orcamento .quote-form > button,
@@ -563,9 +568,10 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 7px 16px;
   font-size: 0.9rem;
 }
-#orcamento .form-field--full textarea { min-height: 96px; }
+#orcamento .form-field--full textarea { min-height: 70px; }
 #orcamento .quote-form > button,
 #orcamento .quote-form > .btn--whatsapp { justify-self: start; }
+#orcamento .quote-form > .btn--whatsapp { height: 28px !important; }
 @media (max-width: 900px) {
   /* mesmo layout sobreposto do desktop (texto atrás, foto flutuando
      por cima de um canto), só com as proporções reduzidas para caber
@@ -587,10 +593,8 @@ ul { list-style: none; margin: 0; padding: 0; }
     padding: 12px min(42%, 160px) 34px 18px;
     border-radius: var(--radius-lg) 0;
   }
-  /* botão extra do WhatsApp precisa de mais espaço reservado embaixo
-     pro título de fundo não ficar por cima dele */
   #orcamento .servicos-text {
-    padding-bottom: 88px;
+    padding-bottom: 54px;
   }
   /* letras menores no mobile — card mais baixo, então as listras da
      seção conseguem chegar até o final dela */
@@ -608,17 +612,17 @@ ul { list-style: none; margin: 0; padding: 0; }
     grid-template-columns: 1fr;
     gap: 0;
   }
-  #orcamento .form-field { margin-bottom: 3px; }
+  #orcamento .form-field { margin-bottom: 1px; }
   #orcamento .form-field label { font-size: 0.68rem; margin-bottom: 0; line-height: 1.2; }
   #orcamento .form-field input,
   #orcamento .form-field select,
   #orcamento .form-field textarea {
-    padding: 3px 10px;
+    padding: 2px 10px;
     font-size: 0.7rem;
   }
-  #orcamento .form-field--full textarea { min-height: 34px; }
+  #orcamento .form-field--full textarea { min-height: 24px; }
   .servicos-text .btn--contact {
-    height: 22px !important;
+    height: 20px !important;
     font-size: 0.6rem !important;
     padding: 0 10px !important;
   }
