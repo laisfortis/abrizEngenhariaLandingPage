@@ -870,7 +870,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   z-index: 0;
   text-align: right;
   font-size: clamp(3.5rem, 11vw, 11rem);
-  margin: -33px 0;
+  margin: 0;
 }
 
 .trabalhe-card {
