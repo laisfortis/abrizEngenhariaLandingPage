@@ -839,19 +839,36 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-weight: 900;
   font-size: var(--fs-h1);
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 .channel-item {
   color: var(--color-yellow);
-  font-size: 1.3rem;
-  margin-bottom: 18px;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
 }
+
+/* formulários compactos dos cards de Contato, para não deixar os
+   banners altos demais */
+.contato-card .form-field,
+.trabalhe-card .form-field { margin-bottom: 10px; }
+.contato-card .form-field label,
+.trabalhe-card .form-field label { font-size: 0.95rem; margin-bottom: 3px; }
+.contato-card .form-field input,
+.contato-card .form-field select,
+.contato-card .form-field textarea,
+.trabalhe-card .form-field input,
+.trabalhe-card .form-field select,
+.trabalhe-card .form-field textarea {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+.contato-card .form-field textarea { min-height: 64px; }
 
 /* título gigante "CONTATO" espremido entre os dois cards, como no protótipo */
 .contato-bg-title {
   position: relative;
   z-index: 0;
-  text-align: left;
+  text-align: right;
   font-size: clamp(3.5rem, 11vw, 11rem);
   margin: -33px 0;
 }
@@ -868,7 +885,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   align-items: center;
 }
 .trabalhe-card h3 { font-style: italic; font-weight: 900; font-size: var(--fs-h1); color: var(--color-gray); }
-.trabalhe-card__lead { font-style: italic; font-size: 1.2rem; margin: 8px 0 20px; color: var(--color-gray); }
+.trabalhe-card__lead { font-style: italic; font-size: 1.2rem; margin: 6px 0 12px; color: var(--color-gray); }
 .trabalhe-card .photo,
 .trabalhe-card .photo-placeholder { aspect-ratio: 559/568; }
 
