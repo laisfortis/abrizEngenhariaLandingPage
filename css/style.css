@@ -382,6 +382,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   min-height: 459px;
 }
+/* no desktop este wrapper não existe visualmente (display:contents),
+   então .servicos-text/.servicos-card continuam posicionados de forma
+   absoluta relativa ao .servicos-combo, exatamente como antes; no
+   mobile ele vira o card amarelo único que acompanha a foto */
+.servicos-combo__panel { display: contents; }
 .servicos-text {
   position: absolute;
   inset: 0;
@@ -492,12 +497,24 @@ ul { list-style: none; margin: 0; padding: 0; }
 #orcamento .quote-form > button { justify-self: start; }
 @media (max-width: 900px) {
   .servicos-combo { min-height: 0; }
+  /* o painel vira o próprio card amarelo, contendo texto/form e foto
+     juntos — a foto fica sempre "dentro" do banner, como no card da
+     página Contato */
+  .servicos-combo__panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--color-yellow);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+  }
   .servicos-text {
     position: static;
-    padding: 30px;
+    padding: 0;
+    background: transparent;
     text-align: left;
     align-items: flex-start;
-    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-radius: 0;
   }
   #orcamento .servicos-text form {
     grid-template-columns: 1fr;
@@ -516,11 +533,20 @@ ul { list-style: none; margin: 0; padding: 0; }
   }
   .servicos-card {
     position: relative;
-    left: auto; top: auto; bottom: auto;
-    width: 88%;
-    margin: 0 auto -60px;
+    left: auto; top: auto; bottom: auto; right: auto;
+    width: 100%;
+    height: auto;
     aspect-ratio: 559/400;
-    z-index: 1;
+    margin: 0;
+    box-shadow: none;
+    border-radius: var(--radius-lg);
+    order: -1;
+  }
+  /* Serviços: foto acima do texto (ordem padrão). Orçamento/Sobre:
+     foto abaixo do texto/form, como no protótipo. */
+  #orcamento .servicos-card,
+  #sobre-intro .servicos-card {
+    order: 1;
   }
 }
 

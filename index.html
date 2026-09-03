@@ -45,15 +45,17 @@
     <img class="stripe-overlay stripe-overlay--gray right_listra_cinza" src="assets/img/chevron-gray-right.png" alt="" aria-hidden="true">
     <div class="container section__content container_nossos_servicos">
       <div class="servicos-combo">
-        <div class="servicos-text">
-          <p class="fs-body" style="font-size: 20px; font-weight:300;">Há mais de 25 anos no mercado da construção civil, <br> a Abriz Engenharia é especializada em pinturas <br> prediais e manutenção. Se você procura por rapidez <br> e eficiência em sua obra, somos a empresa certa <br> para você!</p>
-          <a href="contato.html" class="btn btn--gray btn--contact">Entre em contato</a>
+        <div class="servicos-combo__panel">
+          <div class="servicos-text">
+            <p class="fs-body" style="font-size: 20px; font-weight:300;">Há mais de 25 anos no mercado da construção civil, <br> a Abriz Engenharia é especializada em pinturas <br> prediais e manutenção. Se você procura por rapidez <br> e eficiência em sua obra, somos a empresa certa <br> para você!</p>
+            <a href="contato.html" class="btn btn--gray btn--contact">Entre em contato</a>
+          </div>
+          <div class="servicos-card">
+            <img class="servicos-card__img" src="assets/img/servico-fachada.jpg" alt="Revitalização de fachada predial pela Abriz Engenharia">
+            <div class="servicos-card__tag">REVITALIZAÇÃO DE </br> FACHADA</div>
+          </div>
         </div>
         <p class="servicos-bg-title display-title display-title--gray">NOSSOS<br>SERVIÇOS</p>
-        <div class="servicos-card">
-          <img class="servicos-card__img" src="assets/img/servico-fachada.jpg" alt="Revitalização de fachada predial pela Abriz Engenharia">
-          <div class="servicos-card__tag">REVITALIZAÇÃO DE </br> FACHADA</div>
-        </div>
       </div>
     </div>
   </section>
@@ -64,42 +66,44 @@
     <img class="stripe-overlay stripe-overlay--yellow listras-orcamento-home" src="assets/img/chevron-yellow-right.png" alt="" aria-hidden="true">
     <div class="container section__content container_nossos_servicos">
       <div class="servicos-combo servicos-combo--form">
-        <div class="servicos-text">
-          <form class="quote-form" data-form novalidate>
-            <div class="form-field form-field--half">
-              <label for="orc-nome">Nome:</label>
-              <input type="text" id="orc-nome" name="nome" required>
-            </div>
-            <div class="form-field form-field--half">
-              <label for="orc-telefone">Telefone:</label>
-              <input type="tel" id="orc-telefone" name="telefone" required>
-            </div>
-            <div class="form-field form-field--half">
-              <label for="orc-email">E-mail:</label>
-              <input type="email" id="orc-email" name="email" required>
-            </div>
-            <div class="form-field form-field--half">
-              <label for="orc-servico">Qual serviço você procura?</label>
-              <select id="orc-servico" name="servico" required>
-                <option value="" selected disabled>Selecione uma opção</option>
-                <option value="Revitalização de fachada">Revitalização de fachada</option>
-                <option value="Pintura predial">Pintura predial</option>
-                <option value="Manutenção predial">Manutenção predial</option>
-                <option value="Outro">Outro</option>
-              </select>
-            </div>
-            <div class="form-field form-field--full">
-              <label for="orc-msg">Conte-nos sua necessidade:</label>
-              <textarea id="orc-msg" name="mensagem" required></textarea>
-            </div>
-            <button type="submit" class="btn btn--gray btn--contact">Enviar</button>
-            <p class="form-feedback" role="status" hidden></p>
-          </form>
+        <div class="servicos-combo__panel">
+          <div class="servicos-text">
+            <form class="quote-form" data-form novalidate>
+              <div class="form-field form-field--half">
+                <label for="orc-nome">Nome:</label>
+                <input type="text" id="orc-nome" name="nome" required>
+              </div>
+              <div class="form-field form-field--half">
+                <label for="orc-telefone">Telefone:</label>
+                <input type="tel" id="orc-telefone" name="telefone" required>
+              </div>
+              <div class="form-field form-field--half">
+                <label for="orc-email">E-mail:</label>
+                <input type="email" id="orc-email" name="email" required>
+              </div>
+              <div class="form-field form-field--half">
+                <label for="orc-servico">Qual serviço você procura?</label>
+                <select id="orc-servico" name="servico" required>
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option value="Revitalização de fachada">Revitalização de fachada</option>
+                  <option value="Pintura predial">Pintura predial</option>
+                  <option value="Manutenção predial">Manutenção predial</option>
+                  <option value="Outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-field form-field--full">
+                <label for="orc-msg">Conte-nos sua necessidade:</label>
+                <textarea id="orc-msg" name="mensagem" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--gray btn--contact">Enviar</button>
+              <p class="form-feedback" role="status" hidden></p>
+            </form>
+          </div>
+          <div class="servicos-card">
+            <img class="servicos-card__img" src="assets/img/servico-fachada-orcamento.jpg" alt="Revitalização de fachada predial pela Abriz Engenharia">
+          </div>
         </div>
         <p class="servicos-bg-title display-title display-title--gray">ORÇAMENTO</p>
-        <div class="servicos-card">
-          <img class="servicos-card__img" src="assets/img/servico-fachada-orcamento.jpg" alt="Revitalização de fachada predial pela Abriz Engenharia">
-        </div>
       </div>
     </div>
   </section>
