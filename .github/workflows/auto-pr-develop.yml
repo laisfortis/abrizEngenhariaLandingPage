@@ -1,0 +1,42 @@
+name: Auto PR para develop
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - 'fix/**'
+      - 'refactor/**'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  criar-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Criar PR para develop se ainda não existir
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          EXISTING_PR=$(gh pr list \
+            --head "$BRANCH" \
+            --base develop \
+            --state open \
+            --json number \
+            --jq 'length')
+
+          if [ "$EXISTING_PR" -eq 0 ]; then
+            gh pr create \
+              --base develop \
+              --head "$BRANCH" \
+              --title "Merge $BRANCH em develop" \
+              --body "Pull request criado automaticamente pelo GitHub Actions."
+          else
+            echo "Já existe um PR aberto de $BRANCH para develop."
+          fi
