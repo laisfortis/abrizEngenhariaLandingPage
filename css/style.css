@@ -118,6 +118,22 @@ ul { list-style: none; margin: 0; padding: 0; }
 }
 .btn--sm { width: 123px; padding: 0; }
 .btn--contact {height: 35px !important; padding: 0 13px !important; font-size: 13px !important;}
+.form-or {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin: 4px 0;
+}
+.btn--whatsapp { gap: 8px; }
+.btn--whatsapp svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-label-short { display: none; }
+@media (max-width: 900px) {
+  .btn-label-full { display: none; }
+  .btn-label-short { display: inline; }
+}
 /* ---------- Header / navegação ---------- */
 .site-header {
   position: sticky;
@@ -519,7 +535,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: -30px;
   border-radius: 50px 0px;
 }
-#orcamento .servicos-combo,
+#orcamento .servicos-combo { min-height: 530px; }
 #sobre-intro .servicos-combo { min-height: 459px; }
 #orcamento .servicos-text form {
   width: 100%;
@@ -531,7 +547,9 @@ ul { list-style: none; margin: 0; padding: 0; }
 #orcamento .form-field--half { grid-column: span 1; }
 #orcamento .form-field--full,
 #orcamento .quote-form > button,
-#orcamento .quote-form > .form-feedback {
+#orcamento .quote-form > .form-feedback,
+#orcamento .quote-form > .form-or,
+#orcamento .quote-form > .btn--whatsapp {
   grid-column: 1 / -1;
 }
 #orcamento .form-field label {
@@ -546,7 +564,8 @@ ul { list-style: none; margin: 0; padding: 0; }
   font-size: 0.9rem;
 }
 #orcamento .form-field--full textarea { min-height: 96px; }
-#orcamento .quote-form > button { justify-self: start; }
+#orcamento .quote-form > button,
+#orcamento .quote-form > .btn--whatsapp { justify-self: start; }
 @media (max-width: 900px) {
   /* mesmo layout sobreposto do desktop (texto atrás, foto flutuando
      por cima de um canto), só com as proporções reduzidas para caber
@@ -567,6 +586,11 @@ ul { list-style: none; margin: 0; padding: 0; }
   #sobre-intro .servicos-text {
     padding: 12px min(42%, 160px) 34px 18px;
     border-radius: var(--radius-lg) 0;
+  }
+  /* botão extra do WhatsApp precisa de mais espaço reservado embaixo
+     pro título de fundo não ficar por cima dele */
+  #orcamento .servicos-text {
+    padding-bottom: 88px;
   }
   /* letras menores no mobile — card mais baixo, então as listras da
      seção conseguem chegar até o final dela */

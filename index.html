@@ -69,6 +69,9 @@
         <div class="servicos-combo__panel">
           <div class="servicos-text">
             <form class="quote-form" data-form novalidate>
+              <input type="hidden" name="subject" value="Novo pedido de orçamento — Site Abriz (Home)">
+              <input type="hidden" name="from_name" value="Site Abriz Engenharia">
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
               <div class="form-field form-field--half">
                 <label for="orc-nome">Nome:</label>
                 <input type="text" id="orc-nome" name="nome" required>
@@ -97,6 +100,12 @@
               </div>
               <button type="submit" class="btn btn--gray btn--contact enviar-contact">Enviar</button>
               <p class="form-feedback" role="status" hidden></p>
+              <p class="form-or">ou</p>
+              <a class="btn btn--gray btn--contact btn--whatsapp" href="https://wa.me/5511914651934?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1c.5 1 .8 2.2.8 3.4Z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>
+                <span class="btn-label-full">Solicitar orçamento pelo WhatsApp</span>
+                <span class="btn-label-short">WhatsApp</span>
+              </a>
             </form>
           </div>
           <div class="servicos-card">
