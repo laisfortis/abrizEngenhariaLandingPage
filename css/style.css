@@ -264,6 +264,28 @@ ul { list-style: none; margin: 0; padding: 0; }
   .listras-orcamento-home {
         right: 49px !important;
   }
+  .height-sobre-page{
+    min-height: 400px !important;
+    padding: 69px 0 !important;
+  }
+  .team-card {
+    width: 145px !important;
+  }
+  .team-card__name {
+    font-size: 13px !important;
+  } 
+  .team-card__role {
+    font-size: 16px !important;
+}
+.section-page--sobre {
+    padding: 28px 0 !important;
+}
+.container_nossos_servicos{
+  padding-bottom: 20px !important;
+}
+.testimonial-box {
+    min-height: 134px !important;
+}
 }
 @media (max-width: 600px) {
   :root { --chevron-w: 235px; }
