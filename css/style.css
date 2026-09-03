@@ -852,7 +852,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: relative;
   z-index: 0;
   text-align: center;
-  margin: -46px 0;
+  margin: -24px 0;
 }
 
 .trabalhe-card {
@@ -873,7 +873,7 @@ ul { list-style: none; margin: 0; padding: 0; }
 
 @media (max-width: 900px) {
   .contato-card, .trabalhe-card { grid-template-columns: 1fr; padding: 30px; }
-  .contato-bg-title { margin: -16px 0; }
+  .contato-bg-title { margin: 2px 0; }
 }
 
 /* ---------- Utilidades ---------- */
