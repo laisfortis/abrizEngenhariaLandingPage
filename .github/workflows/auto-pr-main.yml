@@ -1,0 +1,39 @@
+name: Auto PR para main
+
+on:
+  push:
+    branches:
+      - develop
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  criar-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Criar PR de develop para main se ainda não existir
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING_PR=$(gh pr list \
+            --head develop \
+            --base main \
+            --state open \
+            --json number \
+            --jq 'length')
+
+          if [ "$EXISTING_PR" -eq 0 ]; then
+            gh pr create \
+              --base main \
+              --head develop \
+              --title "Merge develop em main" \
+              --body "Pull request criado automaticamente pelo GitHub Actions."
+          else
+            echo "Já existe um PR aberto de develop para main."
+          fi
