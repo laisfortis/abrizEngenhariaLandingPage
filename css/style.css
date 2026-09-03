@@ -265,7 +265,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   #orcamento .listras-orcamento-home {
     width: 235px;
   }
-  .right_listra_cinza {
+  .right_listra_cinza { 
         right: 186px !important;
   }
   .listras-orcamento-home {
