@@ -534,17 +534,17 @@ ul { list-style: none; margin: 0; padding: 0; }
      foto continua absoluta, sobrepondo um dos cantos. */
   .servicos-combo,
   #orcamento .servicos-combo,
-  #sobre-intro .servicos-combo { min-height: 0; }
+  #sobre-intro .servicos-combo { min-height: 250px; }
   .servicos-text {
     position: relative;
     inset: auto;
-    padding: 18px 18px 34px 42%;
+    padding: 18px 18px 34px min(42%, 160px);
     gap: 8px;
     border-radius: 0 var(--radius-lg);
   }
   #orcamento .servicos-text,
   #sobre-intro .servicos-text {
-    padding: 12px 42% 34px 18px;
+    padding: 12px min(42%, 160px) 34px 18px;
     border-radius: var(--radius-lg) 0;
   }
   /* letras menores no mobile — card mais baixo, então as listras da
@@ -595,8 +595,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   .servicos-card {
     left: -10px;
     top: -12px;
-    width: 38%;
-    height: 220px;
+    width: min(38%, 140px);
+    height: auto;
+    aspect-ratio: 133/220;
     box-shadow: 0 10px 24px rgba(0,0,0,0.25);
   }
   #orcamento .servicos-card,
