@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
       - name: Criar PR para develop se ainda não existir
         env:
           GH_TOKEN: ${{ github.token }}
