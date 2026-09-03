@@ -263,7 +263,7 @@ ul { list-style: none; margin: 0; padding: 0; }
      --chevron-w do hero) pra altura delas acompanhar a seção */
   #servicos .right_listra_cinza,
   #orcamento .listras-orcamento-home {
-    width: 235px;
+    width: 235px; 
   }
   .right_listra_cinza {
         right: 186px !important;
