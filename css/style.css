@@ -262,7 +262,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   .listras-orcamento-home { right: 45px !important;}
 }
 @media (max-width: 600px) {
-  :root { --chevron-w: 200px; }
+  :root { --chevron-w: 235px; }
 }
 
 /* ---------- Sections genéricas ---------- */
@@ -401,7 +401,9 @@ ul { list-style: none; margin: 0; padding: 0; }
   align-items: flex-end;
   gap: 24px;
 }
-  
+.servicos-text__lead { font-size: 20px; }
+.servicos-text--lg { font-size: 26px; }
+
 .servicos-bg-title {
   position: absolute;
   right: 40px;
@@ -507,18 +509,36 @@ ul { list-style: none; margin: 0; padding: 0; }
   .servicos-text {
     position: relative;
     inset: auto;
-    padding: 30px 20px 56px 42%;
-    gap: 12px;
+    padding: 18px 18px 34px 42%;
+    gap: 8px;
     border-radius: 0 var(--radius-lg);
   }
   #orcamento .servicos-text,
   #sobre-intro .servicos-text {
-    padding: 20px 42% 56px 20px;
+    padding: 12px 42% 34px 18px;
     border-radius: var(--radius-lg) 0;
   }
+  /* letras menores no mobile — card mais baixo, então as listras da
+     seção conseguem chegar até o final dela */
+  .servicos-text__lead { font-size: 13px; line-height: 1.3; }
+  .servicos-text--lg { font-size: 14px; }
   #orcamento .servicos-text form {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  #orcamento .form-field { margin-bottom: 3px; }
+  #orcamento .form-field label { font-size: 0.68rem; margin-bottom: 0; line-height: 1.2; }
+  #orcamento .form-field input,
+  #orcamento .form-field select,
+  #orcamento .form-field textarea {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+  #orcamento .form-field--full textarea { min-height: 34px; }
+  .servicos-text .btn--contact {
+    height: 26px !important;
+    font-size: 0.65rem !important;
+    padding: 0 10px !important;
   }
   .servicos-bg-title {
     right: 16px;
