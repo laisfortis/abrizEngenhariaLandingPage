@@ -35,6 +35,9 @@
         <div class="contato-card__form">
           <h2 style="color:var(--color-yellow); font-style:italic; font-weight:900; font-size:var(--fs-h1); margin-bottom:12px;">Solicite um orçamento</h2>
           <form data-form novalidate>
+            <input type="hidden" name="subject" value="Novo pedido de orçamento — Site Abriz (Contato)">
+            <input type="hidden" name="from_name" value="Site Abriz Engenharia">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-field">
               <label for="c-nome">Nome:</label>
               <input type="text" id="c-nome" name="nome" required>
@@ -76,7 +79,10 @@
         <div>
           <h3>Quer trabalhar com a gente?</h3>
           <p class="trabalhe-card__lead">Envie seu currículo!</p>
-          <form data-form novalidate>
+          <form data-form novalidate enctype="multipart/form-data">
+            <input type="hidden" name="subject" value="Novo currículo recebido — Site Abriz">
+            <input type="hidden" name="from_name" value="Site Abriz Engenharia">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-field">
               <label for="t-nome">Nome:</label>
               <input type="text" id="t-nome" name="nome" required>
