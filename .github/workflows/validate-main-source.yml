@@ -1,0 +1,23 @@
+name: Validar origem da main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validar-origem:
+    name: Validar origem develop
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Permitir somente develop para main
+        run: |
+          echo "Branch de origem: ${{ github.head_ref }}"
+
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "ERRO: Apenas a branch develop pode abrir PR para main."
+            exit 1
+          fi
+
+          echo "Origem válida: develop."
