@@ -258,6 +258,13 @@ ul { list-style: none; margin: 0; padding: 0; }
   .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
   .hero--home .hero__chevron { opacity: 0.7; }
   .section-divider{ height: 27px !important;}
+  /* nas seções Serviços/Orçamento o card ficou bem mais baixo no
+     mobile — largura própria pras listras (independente do
+     --chevron-w do hero) pra altura delas acompanhar a seção */
+  #servicos .right_listra_cinza,
+  #orcamento .listras-orcamento-home {
+    width: 235px;
+  }
   .right_listra_cinza {
         right: 186px !important;
   }
@@ -410,6 +417,12 @@ ul { list-style: none; margin: 0; padding: 0; }
 .servicos-combo {
   position: relative;
   min-height: 459px;
+  /* no desktop .servicos-text/.servicos-card são absolutos (fora do
+     fluxo), então isso não muda nada; no mobile .servicos-text volta a
+     ficar no fluxo e precisa esticar (align-items:stretch, o padrão do
+     flex) até a altura mínima do combo — senão o fundo amarelo dele
+     fica menor que o combo e sobra um vão sem cor antes do título */
+  display: flex;
 }
 /* wrapper de agrupamento sem efeito no layout — .servicos-text e
    .servicos-card continuam posicionados de forma absoluta relativa ao
@@ -420,6 +433,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   position: absolute;
   inset: 0;
   z-index: 1;
+  flex: 1;
   background: var(--color-yellow);
   border-radius: 0px 50px;
   color: #2f2e2e;
