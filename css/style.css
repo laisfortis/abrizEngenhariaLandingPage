@@ -266,7 +266,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: 114px !important;
 }
 .height-sobre-page{
-  min-height: 580px;
+  height: 580px;
 }
 @media (max-width: 900px) {
   .hero--home { min-height: 368px; --chevron-w: 200px; }
