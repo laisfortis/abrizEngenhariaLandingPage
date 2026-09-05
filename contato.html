@@ -35,6 +35,9 @@
         <div class="contato-card__form">
           <h2 style="color:var(--color-yellow); font-style:italic; font-weight:900; font-size:var(--fs-h1); margin-bottom:12px;">Solicite um orçamento</h2>
           <form data-form novalidate>
+            <input type="hidden" name="subject" value="Novo pedido de orçamento — Site Abriz (Contato)">
+            <input type="hidden" name="from_name" value="Site Abriz Engenharia">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-field">
               <label for="c-nome">Nome:</label>
               <input type="text" id="c-nome" name="nome" required>
@@ -53,6 +56,12 @@
             </div>
             <button type="submit" class="btn">Enviar</button>
             <p class="form-feedback" role="status" hidden></p>
+            <p class="form-or">ou</p>
+            <a class="btn btn--whatsapp" href="https://wa.me/5511914651934?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1c.5 1 .8 2.2.8 3.4Z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>
+              <span class="btn-label-full">Solicitar orçamento pelo WhatsApp</span>
+              <span class="btn-label-short">WhatsApp</span>
+            </a>
           </form>
         </div>
 
@@ -70,7 +79,10 @@
         <div>
           <h3>Quer trabalhar com a gente?</h3>
           <p class="trabalhe-card__lead">Envie seu currículo!</p>
-          <form data-form novalidate>
+          <form data-form novalidate enctype="multipart/form-data">
+            <input type="hidden" name="subject" value="Novo currículo recebido — Site Abriz">
+            <input type="hidden" name="from_name" value="Site Abriz Engenharia">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-field">
               <label for="t-nome">Nome:</label>
               <input type="text" id="t-nome" name="nome" required>

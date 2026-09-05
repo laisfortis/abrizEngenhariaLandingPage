@@ -20,8 +20,14 @@ jobs:
 
     steps:
       - name: Mostrar informações do commit
+        env:
+          BRANCH: ${{ github.ref_name }}
+          COMMIT_SHA: ${{ github.sha }}
+          AUTOR: ${{ github.actor }}
+          MENSAGEM_COMMIT: ${{ github.event.head_commit.message }}
         run: |
-          echo "Branch: ${{ github.ref_name }}"
-          echo "Commit: ${{ github.sha }}"
-          echo "Autor: ${{ github.actor }}"
-          echo "Mensagem: ${{ github.event.head_commit.message }}"
+          echo "Branch: $BRANCH"
+          echo "Commit: $COMMIT_SHA"
+          echo "Autor: $AUTOR"
+          echo "Mensagem:"
+          printf '%s\n' "$MENSAGEM_COMMIT"
