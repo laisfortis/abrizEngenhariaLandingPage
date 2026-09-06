@@ -266,7 +266,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   right: 114px !important;
 }
 .height-sobre-page{
-  min-height: 580px;
+  height: 580px;
 }
 @media (max-width: 900px) {
   .hero--home { min-height: 368px; --chevron-w: 200px; }
@@ -288,7 +288,7 @@ ul { list-style: none; margin: 0; padding: 0; }
         right: 49px !important;
   }
   .height-sobre-page{
-    min-height: 400px !important;
+    max-height: 396px !important;
     padding: 69px 0 !important;
   }
   /* listra da seção de equipe do Sobre nós reaproveita a classe do
@@ -459,16 +459,17 @@ ul { list-style: none; margin: 0; padding: 0; }
   flex: 1;
   background: var(--color-yellow);
   border-radius: 0px 50px;
-  color: #2f2e2e;
+  color: #585656;
   text-align: right;
   padding: 60px 50px 50px 36%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 24px;
+  text-align: justify !important;
 }
 .servicos-text__lead { font-size: 20px; }
-.servicos-text--lg { font-size: 26px; }
+.servicos-text--lg { font-size: 17px; padding-top: 30px !important;}
 
 .servicos-bg-title {
   position: absolute;
@@ -512,8 +513,45 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 14px 16px;
   z-index: 1;
 }
-.servicos-text p { margin-bottom: 1.2em; }
-.servicos-text p:last-of-type { margin-bottom: 1.6em; }
+.servicos-text p { margin-bottom: 0px; }
+.servicos-text p:last-of-type { margin-bottom: -0.4em; }
+
+/* Sobre nós — diferenciais no lugar das fotos do engenheiro/diretor: sem
+   foto flutuando ao lado, o card usa a largura toda (sem reservar os 36%
+   que ficariam vazios) e os 3 itens ficam lado a lado, cada um com ícone,
+   título e um espaço de texto embaixo */
+.servicos-text.servicos-text--diferenciais {
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.diferenciais-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+.diferenciais-row__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+.diferenciais-row__item img { width: 64px; height: 64px; object-fit: contain; }
+.diferenciais-row__label {
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.diferenciais-row__text {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.85;
+  text-align: justify;
+}
 
 /* Orçamento: mesmo combo do Serviços, espelhado — texto à esquerda,
    foto flutuante à direita. Fundo e listras da seção não mudam. */
@@ -599,7 +637,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   /* letras menores no mobile — card mais baixo, então as listras da
      seção conseguem chegar até o final dela */
   .servicos-text__lead { font-size: 13px; line-height: 1.3; }
-  .servicos-text--lg { font-size: 14px; }
+  .servicos-text--lg { font-size: 12px; }
   /* mais reserva embaixo (e menos em cima/entrelinhas) pro botão não
      ficar sobre o título de fundo — sem aumentar a altura total */
   #servicos .servicos-text {
@@ -626,6 +664,14 @@ ul { list-style: none; margin: 0; padding: 0; }
     font-size: 0.6rem !important;
     padding: 0 10px !important;
   }
+  .servicos-text.servicos-text--diferenciais {
+    padding: 24px 20px;
+  }
+  .diferenciais-row { gap: 10px; }
+  .diferenciais-row__item { gap: 6px; }
+  .diferenciais-row__item img { width: 34px; height: 34px; }
+  .diferenciais-row__label { font-size: 0.7rem; }
+  .diferenciais-row__text { font-size: 0.6rem; text-align: justify; }
 
   .enviar-contact{
     height: 19px !important;
