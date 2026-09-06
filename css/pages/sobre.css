@@ -1,0 +1,188 @@
+/* Sobre nós — importa a base global + os componentes que a página usa; o
+   resto deste arquivo é só o que é exclusivo do Sobre nós. */
+@import url('../global.css');
+@import url('../components/header.css');
+@import url('../components/footer.css');
+@import url('../components/combo-card.css');
+
+.section-page--sobre { padding-bottom: 0px !important; }
+
+.height-sobre-page { height: 580px; }
+
+/* ---------- Intro (#sobre-intro): mesmo combo-card do Serviços/Orçamento,
+   espelhado — texto à esquerda, foto flutuante à direita. O mesmo bloco de
+   regras #orcamento existe em css/pages/index.css — duplicado de propósito
+   para que um ajuste aqui nunca afete a Home. ---------- */
+#sobre-intro .servicos-text {
+  text-align: left;
+  align-items: flex-start;
+  padding: 24px 36% 50px 50px;
+  border-radius: 50px 0px;
+}
+#sobre-intro .servicos-card {
+  left: auto;
+  right: -30px;
+  border-radius: 50px 0px;
+}
+#sobre-intro .servicos-combo { min-height: 459px; }
+
+/* ---------- Diferenciais (Missão/Visão/Valores) — substituem as fotos do
+   engenheiro/diretor: sem foto flutuando ao lado, o card usa a largura
+   toda (sem reservar os 36% que ficariam vazios) e os 3 itens ficam lado a
+   lado, cada um com ícone, título e um espaço de texto embaixo ---------- */
+.servicos-text.servicos-text--diferenciais {
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.diferenciais-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+.diferenciais-row__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+.diferenciais-row__item img { width: 64px; height: 64px; object-fit: contain; }
+.diferenciais-row__label {
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+.diferenciais-row__text {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.85;
+  text-align: justify;
+}
+
+/* ---------- Números + depoimentos ---------- */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gutter);
+  margin-top: 60px;
+}
+.stat-box {
+  background: var(--color-white);
+  border: 3px solid var(--color-yellow);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  text-align: center;
+}
+.stat-box strong { display: block; font-weight: 800; font-size: var(--fs-stat); }
+.stat-box span { display: block; font-weight: 300; font-size: 1.4rem; text-transform: uppercase; }
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  margin-top: 60px;
+}
+.testimonial-box {
+  position: relative;
+  border: 2px solid var(--color-yellow);
+  border-radius: var(--radius-lg);
+  min-height: 220px;
+  padding: 40px 30px;
+}
+.testimonial-box::before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-size: 5rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--color-yellow);
+  opacity: 0.5;
+}
+.testimonial-box p { font-style: italic; }
+
+/* .sobre-intro / .servicos-grid / .team-*: sem uso encontrado na página
+   atual (a seção da equipe virou os "diferenciais" acima) — mantidos por
+   precaução (ver relatório final). */
+.sobre-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  align-items: center;
+  margin-top: 60px;
+}
+.sobre-intro__text {
+  background: var(--color-yellow);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  font-size: var(--fs-body);
+  line-height: 1.4;
+  color: #2f2e2e;
+}
+.sobre-intro__text p + p { margin-top: 1em; }
+.sobre-intro__photo {
+  aspect-ratio: 440/568;
+  border-radius: var(--radius-lg);
+}
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.team-card { text-align: center; width: 250px; }
+.team-card__photo {
+  aspect-ratio: 1/1.28;
+  border-radius: 24px;
+  margin-bottom: 20px;
+}
+.team-card__name { color: var(--color-yellow); font-weight: 500; font-size: 1.6rem; }
+.team-card__role { font-style: italic; color: var(--color-yellow); font-size: 1.2rem; margin-top: 6px; }
+
+@media (max-width: 900px) {
+  /* precisa repetir aqui (mesma especificidade do #sobre-intro .servicos-combo
+     de cima) pra vencer o min-height:459px do desktop no mobile */
+  #sobre-intro .servicos-combo { min-height: 250px; }
+  .height-sobre-page {
+    max-height: 396px !important;
+    padding: 69px 0 !important;
+  }
+  /* listra da seção de diferenciais reaproveita a classe do Orçamento só
+     pro posicionamento — largura própria pra acompanhar a altura reduzida
+     desta seção (imagem "tall" tem proporção diferente das outras listras) */
+  .height-sobre-page .listras-orcamento-home {
+    width: 232px;
+  }
+  .section-page--sobre { padding: 28px 0 !important; }
+  .testimonial-box { min-height: 134px !important; }
+
+  #sobre-intro .servicos-text {
+    padding: 12px min(42%, 160px) 34px 18px;
+    border-radius: var(--radius-lg) 0;
+  }
+  #sobre-intro .servicos-card {
+    right: -10px;
+  }
+  .servicos-text.servicos-text--diferenciais {
+    padding: 24px 20px;
+  }
+  .diferenciais-row { gap: 10px; }
+  .diferenciais-row__item { gap: 6px; }
+  .diferenciais-row__item img { width: 34px; height: 34px; }
+  .diferenciais-row__label { font-size: 0.7rem; }
+  .diferenciais-row__text { font-size: 0.6rem; text-align: justify; }
+
+  .sobre-intro, .servicos-grid, .stats-row, .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .team-grid { flex-wrap: wrap; }
+  .team-card { width: 145px !important; }
+  .team-card__name { font-size: 13px !important; }
+  .team-card__role { font-size: 16px !important; }
+}

@@ -1,0 +1,58 @@
+/* ---------- Formulários (base) ----------
+   Usado pelo formulário de Orçamento da Home e pelos dois formulários do
+   Contato (Orçamento e Trabalhe conosco). Ajustes visuais específicos de
+   onde o formulário aparece (grid dentro do combo-card, cards do Contato)
+   ficam nos arquivos de página, não aqui. */
+.form-field { margin-bottom: 18px; }
+.form-field label {
+  display: block;
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-body2);
+  margin-bottom: 6px;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: none;
+  border-radius: var(--radius-card);
+  padding: 12px 20px;
+  font-family: var(--font);
+  font-size: 1rem;
+  background: var(--color-white);
+  color: var(--color-gray);
+}
+.form-field select { appearance: auto; cursor: pointer; }
+.form-field textarea { border-radius: 24px; min-height: 110px; resize: vertical; }
+.form-field--file input { padding: 10px 20px; }
+
+/* botão "ou fale pelo WhatsApp", abaixo do Enviar */
+.form-or {
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  margin: 5px 0 5px 10px;
+}
+.btn--whatsapp { gap: 8px; }
+.btn--whatsapp svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn-label-short { display: none; }
+@media (max-width: 900px) {
+  .btn-label-full { display: none; }
+  .btn-label-short { display: inline; }
+}
+
+/* .orcamento-grid: sem uso encontrado nas páginas atuais — mantido por
+   precaução (ver relatório final). */
+.orcamento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .orcamento-grid { grid-template-columns: 1fr; }
+}

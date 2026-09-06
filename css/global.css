@@ -1,0 +1,202 @@
+/* =========================================================
+   ABRIZ ENGENHARIA — Design tokens extraídos do Figma
+   Cores: #F6D143 (Amarelo IDV Abriz) / #585656 (Cinza) / #FFFFFF
+   Fonte: Sofia Sans (pesos: Light, Regular, Medium, Bold, ExtraBold, ExtraBlack Italic)
+
+   Este arquivo é o ÚNICO que deve conter estilos realmente globais: reset,
+   tipografia, variáveis, container, botões e utilitários usados em mais de
+   uma página. Estilos de um componente específico vão em css/components/,
+   estilos de uma única página vão em css/pages/.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,500;1,600;1,900&display=swap');
+
+:root {
+  --color-yellow: #F6D143;
+  --color-yellow-70: rgba(246, 209, 67, 0.7);
+  --color-gray: #585656;
+  --color-gray-40: rgba(88, 86, 86, 0.4);
+  --color-white: #FFFFFF;
+  --color-placeholder-a: #b2a6a6;
+  --color-placeholder-b: rgba(178, 166, 166, 0.76);
+  --color-placeholder-light: #e4e0e0;
+
+  --font: 'Sofia Sans', Arial, Helvetica, sans-serif;
+
+  --fs-display: clamp(2.75rem, 8vw, 8.0625rem);   /* 44px -> 129px, títulos gigantes de fundo */
+  --fs-h1: clamp(1.6rem, 2.6vw, 2.1875rem);        /* 26px -> 35px */
+  --fs-subtitle: clamp(1.4rem, 2.6vw, 2.25rem);    /* subtítulos 36px */
+  --fs-body: clamp(1rem, 1.6vw, 1.6875rem);        /* texto corrido 27px */
+  --fs-body2: clamp(0.95rem, 1.4vw, 1.5625rem);    /* texto itálico 25px */
+  --fs-nav: 1.125rem;                              /* 18px */
+  --fs-stat: clamp(2rem, 4.5vw, 3.75rem);          /* números 60px */
+  --fs-stat-label: clamp(1.25rem, 2.8vw, 3.25rem); /* 52px */
+
+  --radius-pill: 31px;
+  --radius-lg: 40px;
+  --radius-xl: 70px;
+  --radius-card: 33px;
+
+  --chevron-w: 340px; /* largura fixa do gráfico chevron — igual em todo lugar
+                          para as linhas se alinharem nas emendas entre seções */
+  --container-max: 1400px;
+  --gutter: 30px;
+
+  --header-h: 77px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--color-gray);
+  background: var(--color-white);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+h1, h2, h3, p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+/* container mais estreito (1040px), reaproveitado pelas seções de
+   Serviços/Orçamento/Sobre-intro e pelo container do Contato */
+.container_nossos_servicos { width: 1040px; }
+@media (max-width: 1080px) {
+  .container_nossos_servicos { width: 100%; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+}
+@media (max-width: 900px) {
+  /* afeta as 3 páginas que usam .container_nossos_servicos (Home, Sobre
+     nós e Contato) */
+  .container_nossos_servicos { padding-bottom: 20px !important; }
+}
+@media (max-width: 600px) {
+  :root { --chevron-w: 235px; }
+}
+
+/* ---------- Título gigante decorativo (fundo desbotado) ---------- */
+.display-title {
+  font-weight: 900;
+  font-style: italic;
+  font-size: var(--fs-display);
+  line-height: 0.95;
+  opacity: 0.27;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.display-title--yellow { color: var(--color-yellow); opacity: 0.41; }
+.display-title--gray { color: var(--color-gray); }
+
+/* ---------- Botões (pill, extraídos do componente BOTÕES) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 24px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-yellow);
+  background: transparent;
+  color: var(--color-yellow);
+  font-weight: 700;
+  font-size: var(--fs-nav);
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn:hover, .btn:focus-visible {
+  background: var(--color-yellow);
+  color: var(--color-gray);
+}
+.btn--gray {
+  border-color: var(--color-gray);
+  color: var(--color-gray);
+}
+.btn--gray:hover, .btn--gray:focus-visible {
+  background: var(--color-gray);
+  color: var(--color-yellow);
+}
+/* .btn--sm: não encontrado em nenhuma página no momento desta reorganização
+   (ver relatório final — mantido por precaução, não removido). */
+.btn--sm { width: 123px; padding: 0; }
+.btn--contact { height: 35px !important; padding: 0 13px !important; font-size: 13px !important; }
+
+/* ---------- Sections genéricas (usadas por Home, Sobre e Contato) ---------- */
+.section { position: relative; padding: 83px 0; }
+.section--light { background: var(--color-placeholder-light); }
+.section--dark { background: var(--color-gray); color: var(--color-white); }
+/* .section--yellow: sem uso encontrado nas páginas atuais — mantido por
+   precaução (ver relatório final). */
+.section--yellow { background: var(--color-yellow); }
+.section__content { position: relative; z-index: 2; }
+
+/* .section__bg-title (+ variantes): sem uso encontrado nas páginas atuais
+   — mantido por precaução (ver relatório final). */
+.section__bg-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  z-index: 1;
+  pointer-events: none;
+}
+.section__bg-title--left {
+  text-align: left;
+  padding-left: 40px;
+}
+.section__bg-title--right {
+    top: auto;
+    bottom: 1%;
+    transform: none;
+    text-align: right;
+    padding-right: 40px;
+    margin-bottom: 0 !important;
+    right: 1%;
+    font-size: 80px;
+}
+@media (max-width: 768px) {
+  .section__bg-title--left { padding-left: 20px; }
+  .section__bg-title--right { padding-right: 20px; }
+}
+
+/* tint escuro sobre foto de fundo de seção — usado por Home (#orcamento) e
+   Sobre nós (intro + seção da equipe) */
+.section__photo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #585656;
+  opacity: 0.3;
+}
+/* mesma ideia, sem cor de fundo própria (a imagem de fundo vem do CSS de
+   cada página) — usado por Sobre nós e Contato */
+.section__photo-bg-sobre {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* ---------- Utilidades ---------- */
+/* .mt-lg e .wave-divider: sem uso encontrado nas páginas atuais — mantidos
+   por precaução (ver relatório final). */
+.mt-lg { margin-top: 60px; }
+.text-center { text-align: center; }
+.wave-divider {
+  height: 60px;
+  background: var(--color-placeholder-light);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  width: 120px;
+  margin: 0 auto;
+}
