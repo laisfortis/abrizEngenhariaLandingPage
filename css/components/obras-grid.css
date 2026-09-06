@@ -1,0 +1,31 @@
+/* ---------- Grid de obras (base) ----------
+   Compartilhado pela prévia de obras da Home e pela grade completa do
+   Portfólio. O reset do <button> (só o Portfólio usa <button> nos itens,
+   a Home usa <a>) fica em css/pages/portfolio.css. */
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.obras-grid a,
+.obras-grid__item {
+  position: relative;
+  aspect-ratio: 504/526;
+  background: var(--color-placeholder-a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.obras-grid a:nth-child(even),
+.obras-grid__item:nth-child(even) { background: var(--color-placeholder-b); }
+.obras-grid__label {
+  font-weight: 900;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  color: var(--color-yellow);
+  opacity: 0.5;
+}
+@media (max-width: 900px) {
+  .obras-grid { grid-template-columns: repeat(2, 1fr); }
+}

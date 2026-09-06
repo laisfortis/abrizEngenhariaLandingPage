@@ -1,0 +1,51 @@
+/* ---------- Footer (partials/footer.html) ---------- */
+.site-footer {
+  background: var(--color-gray);
+  color: var(--color-yellow);
+  padding: 60px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  padding: 0 40px;
+}
+@media (max-width: 768px) {
+  .footer-grid { padding: 0 20px; }
+}
+.footer-logo { width: 350px; }
+.footer-links { display: flex; flex-direction: column; gap: 14px; text-align: right; }
+.footer-links a { font-weight: 700; font-size: var(--fs-nav); text-transform: uppercase; }
+.footer-contact p { margin-bottom: 10px; font-weight: 700; }
+.footer-contact .light { font-weight: 400; }
+.footer-contact .icon-line { display: flex; align-items: center; gap: 6px; }
+.footer-contact .icon-line svg { width: 13px; height: 13px; flex-shrink: 0; }
+/* .footer-social: sem uso encontrado no partial atual do footer — mantido
+   por precaução (ver relatório final). */
+.footer-social { display: flex; gap: 16px; margin-top: 16px; }
+.footer-social a {
+  width: 34px; height: 34px;
+  border: 1.5px solid var(--color-yellow);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.footer-social svg { width: 16px; height: 16px; }
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(246,209,67,0.25);
+  font-size: 0.85rem;
+  opacity: 0.85;
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+    text-align: left;
+  }
+  .footer-grid > div:first-child { grid-column: 1 / -1; }
+  .footer-links { text-align: left; }
+}
