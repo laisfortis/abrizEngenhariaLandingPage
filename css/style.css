@@ -513,6 +513,37 @@ ul { list-style: none; margin: 0; padding: 0; }
   padding: 14px 16px;
   z-index: 1;
 }
+
+/* Carrossel de fotos do card de Serviços — mesmo card (tamanho, cantos,
+   sombra), só que com várias fotos por baixo alternando via fade e duas
+   setas fixas nas laterais, em vez de uma única imagem estática */
+.servicos-card__carousel { position: absolute; inset: 0; }
+.servicos-card__carousel .servicos-card__img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.servicos-card__carousel .servicos-card__img.is-active { opacity: 1; }
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.carousel-arrow:hover, .carousel-arrow:focus-visible { background: rgba(0, 0, 0, 0.6); }
+.carousel-arrow svg { width: 18px; height: 18px; }
+.carousel-arrow--prev { left: 10px; }
+.carousel-arrow--next { right: 10px; }
 .servicos-text p { margin-bottom: 0px; }
 .servicos-text p:last-of-type { margin-bottom: 1.6em; }
 
@@ -703,6 +734,10 @@ ul { list-style: none; margin: 0; padding: 0; }
     font-size: 0.55rem;
     padding: 6px 4px;
   }
+  .carousel-arrow { width: 22px; height: 22px; }
+  .carousel-arrow svg { width: 11px; height: 11px; }
+  .carousel-arrow--prev { left: 4px; }
+  .carousel-arrow--next { right: 4px; }
 }
 
 /* ---------- Orçamento (home) ---------- */
