@@ -514,7 +514,7 @@ ul { list-style: none; margin: 0; padding: 0; }
   z-index: 1;
 }
 .servicos-text p { margin-bottom: 0px; }
-.servicos-text p:last-of-type { margin-bottom: -0.4em; }
+.servicos-text p:last-of-type { margin-bottom: 1.6em; }
 
 /* Sobre nós — diferenciais no lugar das fotos do engenheiro/diretor: sem
    foto flutuando ao lado, o card usa a largura toda (sem reservar os 36%
