@@ -5,38 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfólio | Abriz Engenharia</title>
 <meta name="description" content="Confira algumas das obras entregues pela Abriz Engenharia.">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages/portfolio.css">
 </head>
 <body>
 
 <header class="site-header">
-  <div class="container">
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre nós</a>
-      <a href="index.html#servicos">Serviços</a>
-      <a href="portfolio.html" class="is-active">Portfólio</a>
-      <a href="contato.html">Contato</a>
-      <a href="contato.html" class="btn nav-cta-mobile">Solicite um orçamento</a>
-    </nav>
-    <a href="contato.html" class="btn nav-cta">Solicite um orçamento</a>
-  </div>
+  <div class="container" data-header></div>
 </header>
 
 <main>
   <section class="obras-grid" aria-label="Galeria de obras">
-    <button class="obras-grid__item" data-obra="Revitalização de fachada" data-data="2024"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Pintura predial" data-data="2024"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Manutenção estrutural" data-data="2023"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Impermeabilização" data-data="2023"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Reforma de fachada" data-data="2023"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Pintura industrial" data-data="2022"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Restauro predial" data-data="2022"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Vistoria e reparo" data-data="2022"><span class="obras-grid__label">OBRA</span></button>
-    <button class="obras-grid__item" data-obra="Pintura de fachada" data-data="2021"><span class="obras-grid__label">OBRA</span></button>
+    <button class="obras-grid__item" data-obra="Edifício Anália Gold" data-data="2024" data-img="assets/img/EdificioAnaliaGoldVertic.png">
+      <img src="assets/img/EdificioAnaliaGoldHoriz.png" alt="Foto da obra Edifício Anália Gold">
+    </button>
+    <button class="obras-grid__item" data-obra="Mar e Sol" data-data="2024">
+      <img src="assets/img/MarESol-Depois.png" alt="Foto da obra Mar e Sol">
+    </button>
+    <button class="obras-grid__item" data-obra="Parque das Árvores" data-data="2023">
+      <img src="assets/img/ParqueDasArvores-Depois.png" alt="Foto da obra Parque das Árvores">
+    </button>
+    <button class="obras-grid__item" data-obra="Residencial Maria Lourenço" data-data="2023" data-img="assets/img/ResidencialMariaLourenco2.png">
+      <img src="assets/img/ResidencialMariaLourenco.png" alt="Foto da obra Residencial Maria Lourenço">
+    </button>
+    <button class="obras-grid__item" data-obra="Residencial Sol do Guarujá" data-data="2023">
+      <img src="assets/img/ResidencialSolDoGuaruja.png" alt="Foto da obra Residencial Sol do Guarujá">
+    </button>
+    <button class="obras-grid__item" data-obra="Residencial Vila Funchal" data-data="2022">
+      <img src="assets/img/ResidencialVilaFunchal.jpg" alt="Foto da obra Residencial Vila Funchal">
+    </button>
+    <button class="obras-grid__item" data-obra="Santo Onofre" data-data="2022">
+      <img src="assets/img/SantoOnofre-Depois.png" alt="Foto da obra Santo Onofre">
+    </button>
+    <button class="obras-grid__item" data-obra="São Lucas V" data-data="2022">
+      <img src="assets/img/SaoLucasV-Depois.png" alt="Foto da obra São Lucas V">
+    </button>
+    <button class="obras-grid__item" data-obra="São Lucas 3" data-data="2021">
+      <img src="assets/img/S%C3%A3o%20Lucas%203%20-%20DEPOIS%202.jpg" alt="Foto da obra São Lucas 3">
+    </button>
   </section>
 
   <div class="container text-center" style="padding: 40px 0;">
@@ -60,37 +65,8 @@
   </div>
 </div>
 
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <img class="footer-logo" src="assets/img/logo-abriz.png" alt="Abriz Engenharia">
-    </div>
-    
+<footer class="site-footer" data-footer></footer>
 
-    <nav class="footer-links">
-      </br>
-      <a href="sobre.html">Sobre nós</a>
-      <a href="index.html#servicos">Serviços</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contato.html">Contato</a>
-      <a href="index.html#orcamento">Orçamento</a>
-    </nav>
-
-    <div class="footer-contact">
-    </br>
-      <p style="margin-bottom: 0; font-size: 13px;">Atendimento</p>
-      <p class="light" style="font-size: 13px;">Seg. a Sex. — 8h00 às 18h00</p>
-      <p style="margin-bottom: 0; font-size: 13px;">CNPJ: 50.594.990/0001-01</p>
-      <p style="font-size: 13px;">São Paulo - SP</p>
-      <a href="https://www.instagram.com/abrizengenharia" target="_blank"><p style="font-size: 13px;" class="light icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>@abrizengenharia</p></a>
-      <a href="https://wa.me/message/3T56P4DASMY5I1" target="_blank"><p style="font-size: 13px;" class="light icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 1 1-4.1-7.3L21 3l-1.2 4.1c.5 1 .8 2.2.8 3.4Z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6"/></svg>+55 11 91465-1934</p></a>
-      <a href="https://abrizengenharia.com.br/" target="_blank"><p style="font-size: 13px;" class="light icon-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15.5 0 18M12 3c-2.5 2.5-2.5 15.5 0 18"/></svg>www.abrizengenharia.com.br</p></a>
-    </div>
-  </div>
-  <p class="footer-bottom">&copy; <span id="year"></span> Abriz Engenharia. Todos os direitos reservados.</p>
-</footer>
-
-<script src="js/main.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script type="module" src="js/pages/portfolio.js"></script>
 </body>
 </html>
