@@ -1,0 +1,10 @@
+/* Portfólio — importa a base global + os componentes que a página usa; o
+   resto deste arquivo é só o que é exclusivo do Portfólio. */
+@import url('../global.css');
+@import url('../components/header.css');
+@import url('../components/footer.css');
+@import url('../components/obras-grid.css');
+@import url('../components/lightbox.css');
+
+/* só o Portfólio usa <button> nos itens do grid (a Home usa <a>) */
+.obras-grid button.obras-grid__item { border: none; padding: 0; width: 100%; }

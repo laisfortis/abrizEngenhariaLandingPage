@@ -1,0 +1,247 @@
+/* Home — importa a base global + os componentes que a página usa; o resto
+   deste arquivo é só o que é exclusivo da Home (hero, e os ajustes das
+   seções #servicos/#orcamento sobre o combo-card compartilhado). */
+@import url('../global.css');
+@import url('../components/header.css');
+@import url('../components/footer.css');
+@import url('../components/combo-card.css');
+@import url('../components/forms.css');
+@import url('../components/carousel.css');
+@import url('../components/trust-badges.css');
+@import url('../components/obras-grid.css');
+
+/* ---------- Tag da prévia de obras (nome do prédio + serviço) ----------
+   Só a Home mostra esse cardizinho — o grid do Portfólio não usa. */
+.obras-grid__tag {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  background: var(--color-yellow);
+  color: var(--color-gray);
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 14px;
+  line-height: 1.2;
+}
+.obras-grid__tag-name {
+  display: block;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.obras-grid__tag-service {
+  display: block;
+  font-weight: 400;
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+@media (max-width: 900px) {
+  .obras-grid__tag { left: 6px; right: 6px; bottom: 6px; padding: 4px 6px; border-radius: 10px; }
+  .obras-grid__tag-name { font-size: 0.6rem; }
+  .obras-grid__tag-service { font-size: 0.55rem; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 480px;
+  background: url('../../assets/img/hero-bg.jpg') center/cover no-repeat, linear-gradient(135deg, var(--color-gray) 0%, #3f3d3d 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+/* degradê: claro/transparente à esquerda, escuro à direita — igual ao protótipo */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30,29,29,0.1) 0%, rgba(30,29,29,0.55) 55%, rgba(20,19,19,0.88) 100%);
+}
+/* .hero__title: sem uso encontrado na Home atual — mantido por precaução
+   (ver relatório final). */
+.hero__title {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60px 0 50px;
+  text-align: center;
+}
+
+/* Hero da Home: foto em tela cheia, logo à esquerda, chevron à direita */
+.hero--home {
+  min-height: 623px;
+  align-items: center;
+}
+/* largura fixa e igual à do chevron das seções abaixo, para as linhas se
+   encontrarem exatamente na emenda entre o hero e a próxima seção */
+.hero--home .hero__chevron {
+  position: absolute;
+  bottom: 0;
+  right: 58px;
+  width: var(--chevron-w);
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+.hero--home .hero__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.hero__logo {
+    width: min(38vw, 520px);
+    margin-left: 15%;
+}
+.hero__dots {
+  position: absolute;
+  right: 6%;
+  bottom: 8%;
+  z-index: 2;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 6px;
+}
+
+/* divisor entre o hero e a próxima seção: barra cinza + triângulo apontando
+   para baixo, marcando a transição (como no protótipo) */
+.section-divider {
+  position: relative;
+  height: 56px;
+  background: var(--color-gray);
+  z-index: 3;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  border-top: 38px solid var(--color-gray);
+}
+
+/* ---------- Orçamento: mesmo combo-card do Serviços, espelhado — texto à
+   esquerda, foto flutuante à direita. Fundo e listras da seção não mudam.
+   (o mesmo bloco de regras #sobre-intro existe em css/pages/sobre.css —
+   duplicado de propósito para que um ajuste aqui nunca afete o Sobre nós). ---------- */
+#orcamento .servicos-text {
+  text-align: left;
+  align-items: flex-start;
+  padding: 24px 36% 50px 50px;
+  border-radius: 50px 0px;
+}
+/* card ganhou o botão extra do WhatsApp — padding mais enxuto pra
+   caber sem precisar aumentar o card (e desalinhar as listras) */
+#orcamento .servicos-text {
+  padding: 14px 36% 18px 50px;
+}
+#orcamento .servicos-bg-title {
+  right: auto;
+  left: 40px;
+  text-align: left;
+}
+#orcamento .servicos-card {
+  left: auto;
+  right: -30px;
+  border-radius: 50px 0px;
+}
+#orcamento .servicos-combo { min-height: 459px; }
+#orcamento .servicos-text form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+#orcamento .form-field { margin-bottom: 4px; }
+#orcamento .form-field--half { grid-column: span 1; }
+#orcamento .form-field--full,
+#orcamento .quote-form > button,
+#orcamento .quote-form > .form-feedback,
+#orcamento .quote-form > .form-or,
+#orcamento .quote-form > .btn--whatsapp {
+  grid-column: 1 / -1;
+}
+#orcamento .form-field label {
+  color: #2f2e2e;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+#orcamento .form-field input,
+#orcamento .form-field select,
+#orcamento .form-field textarea {
+  padding: 7px 16px;
+  font-size: 0.9rem;
+}
+#orcamento .form-field--full textarea { min-height: 70px; }
+#orcamento .quote-form > button,
+#orcamento .quote-form > .btn--whatsapp { justify-self: start; }
+#orcamento .quote-form > .btn--whatsapp { height: 28px !important; }
+
+@media (max-width: 900px) {
+  /* precisa repetir aqui (mesma especificidade do #orcamento .servicos-combo
+     de cima) pra vencer o min-height:459px do desktop no mobile */
+  #orcamento .servicos-combo { min-height: 250px; }
+  .hero--home { min-height: 368px; --chevron-w: 200px; }
+  .hero--home .hero__chevron { right: 15px; }
+  .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
+  .hero--home .hero__chevron { opacity: 0.7; }
+  .section-divider { height: 27px !important; }
+  /* nas seções Serviços/Orçamento o card ficou bem mais baixo no
+     mobile — largura própria pras listras (independente do
+     --chevron-w do hero) pra altura delas acompanhar a seção */
+  #servicos .right_listra_cinza,
+  #orcamento .listras-orcamento-home {
+    width: 285px;
+  }
+  .section-servicos { padding: 79px 0 !important; }
+
+  #orcamento .servicos-text {
+    padding: 12px min(42%, 160px) 34px 18px;
+    border-radius: var(--radius-lg) 0;
+  }
+  #orcamento .servicos-text {
+    padding-bottom: 54px;
+  }
+  /* mais reserva embaixo (e menos em cima/entrelinhas) pro botão não
+     ficar sobre o título de fundo — sem aumentar a altura total */
+  #servicos .servicos-text {
+    padding-top: 8px;
+    padding-bottom: 66px;
+    gap: 4px;
+  }
+  #servicos .servicos-text__lead { line-height: 1.15; }
+  #orcamento .servicos-text form {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  #orcamento .form-field { margin-bottom: 1px; }
+  #orcamento .form-field label { font-size: 0.68rem; margin-bottom: 0; line-height: 1.2; }
+  #orcamento .form-field input,
+  #orcamento .form-field select,
+  #orcamento .form-field textarea {
+    padding: 2px 10px;
+    font-size: 0.7rem;
+  }
+  #orcamento .form-field--full textarea { min-height: 24px; }
+  /* só a Home tem um .btn--contact dentro do .servicos-text hoje */
+  .servicos-text .btn--contact {
+    height: 20px !important;
+    font-size: 0.6rem !important;
+    padding: 0 10px !important;
+  }
+  .enviar-contact {
+    height: 19px !important;
+    font-size: 0.65rem !important;
+    padding: 0 10px !important;
+    margin-bottom: 10px;
+  }
+  #orcamento .servicos-bg-title {
+    left: 16px;
+  }
+  #orcamento .servicos-card {
+    right: -10px;
+  }
+}
