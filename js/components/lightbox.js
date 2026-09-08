@@ -4,22 +4,31 @@ export function initLightbox() {
   const lightbox = document.querySelector('.lightbox');
   if (!items.length || !lightbox) return;
 
+  const photoEl = lightbox.querySelector('.lightbox__photo img');
   const titleEl = lightbox.querySelector('[data-lightbox-title]');
   const dateEl = lightbox.querySelector('[data-lightbox-date]');
   const closeBtn = lightbox.querySelector('.lightbox__close');
   const prevBtn = lightbox.querySelector('.lightbox__nav--prev');
   const nextBtn = lightbox.querySelector('.lightbox__nav--next');
 
+  // cada item pode indicar uma foto própria pro lightbox via data-img;
+  // sem isso, usa a mesma foto que já aparece na miniatura do grid
   const obras = Array.from(items).map((el) => ({
     title: el.dataset.obra,
     date: el.dataset.data || '',
+    img: el.dataset.img || el.querySelector('img')?.getAttribute('src') || '',
   }));
   let currentIndex = 0;
 
   function open(index) {
     currentIndex = (index + obras.length) % obras.length;
-    titleEl.textContent = `Obra: ${obras[currentIndex].title}`;
-    dateEl.textContent = `Data: ${obras[currentIndex].date}`;
+    const obra = obras[currentIndex];
+    titleEl.textContent = `Obra: ${obra.title}`;
+    dateEl.textContent = `Data: ${obra.date}`;
+    if (photoEl && obra.img) {
+      photoEl.src = obra.img;
+      photoEl.alt = `Foto da obra ${obra.title}`;
+    }
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
   }

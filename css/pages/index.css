@@ -10,6 +10,39 @@
 @import url('../components/trust-badges.css');
 @import url('../components/obras-grid.css');
 
+/* ---------- Tag da prévia de obras (nome do prédio + serviço) ----------
+   Só a Home mostra esse cardizinho — o grid do Portfólio não usa. */
+.obras-grid__tag {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 1;
+  background: var(--color-yellow);
+  color: var(--color-gray);
+  text-align: center;
+  padding: 6px 8px;
+  border-radius: 14px;
+  line-height: 1.2;
+}
+.obras-grid__tag-name {
+  display: block;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+.obras-grid__tag-service {
+  display: block;
+  font-weight: 400;
+  font-size: 0.65rem;
+  opacity: 0.85;
+}
+@media (max-width: 900px) {
+  .obras-grid__tag { left: 6px; right: 6px; bottom: 6px; padding: 4px 6px; border-radius: 10px; }
+  .obras-grid__tag-name { font-size: 0.6rem; }
+  .obras-grid__tag-service { font-size: 0.55rem; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
