@@ -184,8 +184,8 @@
   /* precisa repetir aqui (mesma especificidade do #orcamento .servicos-combo
      de cima) pra vencer o min-height:459px do desktop no mobile */
   #orcamento .servicos-combo { min-height: 250px; }
-  .hero--home { min-height: 368px; --chevron-w: 200px; }
-  .hero--home .hero__chevron { right: 15px; }
+  .hero--home { min-height: 523px; --chevron-w: 200px; }
+  .hero--home .hero__chevron { right: 15px; width: 285px;}
   .hero__logo { width: min(55vw, 320px); margin-left: 20px; }
   .hero--home .hero__chevron { opacity: 0.7; }
   .section-divider { height: 27px !important; }
